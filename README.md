@@ -340,5 +340,3 @@ Small, focused PRs help maintain quality and momentum.
 A starter that respects your time.
 
 ---
-#   l m s m i t h 6 6 1  
- 
