@@ -13,15 +13,6 @@ const NavbarLayout = () => {
             className='flex items-center gap-3 hover:opacity-80 transition-opacity'
           >
             <img src='/logo.png' alt='No Dispute Credit' className='h-10' />
-            <div className='hidden sm:block'>
-              <span className='font-heading font-bold text-xl text-gray-900'>
-                No Dispute
-              </span>
-              <span className='font-heading font-bold text-xl text-primary-600'>
-                {' '}
-                Credit
-              </span>
-            </div>
           </Link>
 
           {/* Desktop Navigation */}
