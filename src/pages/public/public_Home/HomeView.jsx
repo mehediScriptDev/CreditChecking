@@ -150,7 +150,11 @@ const HomeView = () => {
                   </Button>
                 </Link>
                 <Link to='/resources'>
-                  <Button size='xl' variant='outline' className='w-full sm:w-auto'>
+                  <Button
+                    size='xl'
+                    variant='outline'
+                    className='w-full sm:w-auto'
+                  >
                     View Resources
                   </Button>
                 </Link>
@@ -262,7 +266,9 @@ const HomeView = () => {
                   <h3 className='text-lg sm:text-xl font-heading font-semibold text-gray-900 mb-2'>
                     {step.title}
                   </h3>
-                  <p className='text-sm sm:text-base text-gray-600'>{step.description}</p>
+                  <p className='text-sm sm:text-base text-gray-600'>
+                    {step.description}
+                  </p>
                 </div>
               ))}
             </div>
