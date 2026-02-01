@@ -116,7 +116,7 @@ const HomeView = () => {
               <img
                 src='/logo.png'
                 alt='No Dispute Credit Logo'
-                className='h-24 sm:h-32 mx-auto mb-8'>
+                className='h-24 sm:h-32 mx-auto mb-8'
               />
             </div>
 
