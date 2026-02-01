@@ -22,13 +22,17 @@ const Login = () => {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
+    rememberMe: false,
   });
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    const { name, value, type, checked } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value,
+    }));
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: '' }));
     }
@@ -82,41 +86,43 @@ const Login = () => {
         <meta name='description' content={metadata.description} />
       </Helmet>
 
-      <div className='min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-50 via-white to-secondary-50 py-12 px-4'>
+      <div className='min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 via-white to-gray-100 py-12 px-4'>
         <div className='w-full max-w-md'>
           {/* Logo */}
           <div className='text-center mb-8'>
             <Link to='/'>
               <img
                 src='/logo.png'
-                alt='No Dispute Credit'
-                className='h-20 mx-auto mb-4'
+                alt='Logo'
+                className='h-20 mx-auto mb-6'
               />
             </Link>
-            <h1 className='text-3xl font-heading font-bold text-gray-900'>
+            <h1 className='text-3xl font-bold text-gray-900 mb-2'>
               Welcome Back
             </h1>
-            <p className='text-gray-600 mt-2'>
+            <p className='text-gray-600'>
               Log in to continue your credit journey
             </p>
           </div>
 
           {/* Login Card */}
-          <Card elevation='xl' className='animate-scaleIn'>
-            <CardHeader>
-              <CardTitle className='text-2xl'>Login to Your Account</CardTitle>
-              <CardDescription>
+          <Card className='shadow-xl border border-gray-200'>
+            <CardHeader className='pb-4'>
+              <CardTitle className='text-xl font-bold text-gray-900'>
+                Login to Your Account
+              </CardTitle>
+              <CardDescription className='text-sm text-gray-600'>
                 Enter your credentials to access your dashboard
               </CardDescription>
             </CardHeader>
 
             <CardContent>
-              <form onSubmit={handleSubmit} className='space-y-4'>
+              <form onSubmit={handleSubmit} className='space-y-5'>
                 <Input
                   label='Email Address'
                   type='email'
                   name='email'
-                  placeholder='you@example.com'
+                  placeholder='user@demo.com'
                   leftIcon={<Mail size={18} />}
                   value={formData.email}
                   onChange={handleChange}
@@ -142,13 +148,16 @@ const Login = () => {
                   <label className='flex items-center gap-2 cursor-pointer'>
                     <input
                       type='checkbox'
-                      className='rounded border-gray-300 text-primary-600 focus:ring-primary-500'
+                      name='rememberMe'
+                      checked={formData.rememberMe}
+                      onChange={handleChange}
+                      className='w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary'
                     />
-                    <span className='text-gray-600'>Remember me</span>
+                    <span className='text-gray-700'>Remember me</span>
                   </label>
                   <Link
                     to='/forgot-password'
-                    className='text-primary-600 hover:text-primary-700 font-medium'
+                    className='text-primary hover:text-primary-600 font-medium transition-colors'
                   >
                     Forgot password?
                   </Link>
@@ -161,18 +170,19 @@ const Login = () => {
                   fullWidth
                   loading={loading}
                   rightIcon={<ArrowRight size={20} />}
+                  className='bg-primary hover:bg-primary-500 text-white font-semibold'
                 >
                   Login
                 </Button>
               </form>
             </CardContent>
 
-            <CardFooter className='justify-center'>
+            <CardFooter className='justify-center border-t border-gray-100 pt-6'>
               <p className='text-sm text-gray-600'>
                 Don't have an account?{' '}
                 <Link
                   to='/register'
-                  className='text-primary-600 hover:text-primary-700 font-semibold'
+                  className='text-primary hover:text-primary-600 font-semibold transition-colors'
                 >
                   Create one now
                 </Link>
@@ -180,17 +190,17 @@ const Login = () => {
             </CardFooter>
           </Card>
 
-          {/* Demo Credentials (Development Only) */}
+          {/* Demo Credentials */}
           {import.meta.env.DEV && (
-            <Card className='mt-4 bg-yellow-50 border-yellow-200'>
+            <Card className='mt-6 bg-yellow-50 border-2 border-yellow-300'>
               <CardContent className='p-4'>
-                <p className='text-xs font-semibold text-yellow-800 mb-2'>
+                <p className='text-sm font-bold text-yellow-900 mb-2'>
                   Demo Credentials:
                 </p>
-                <p className='text-xs text-yellow-700'>
+                <p className='text-sm text-yellow-800'>
                   User: user@demo.com / password123
                 </p>
-                <p className='text-xs text-yellow-700'>
+                <p className='text-sm text-yellow-800'>
                   Admin: admin@demo.com / password123
                 </p>
               </CardContent>
