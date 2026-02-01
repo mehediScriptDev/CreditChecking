@@ -5,7 +5,7 @@ import Button from '../components/ui/Button';
 const NavbarLayout = () => {
   return (
     <header className='bg-white shadow-sm sticky top-0 z-50 border-b border-gray-200'>
-      <nav className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+      <nav className='container mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='flex justify-between items-center h-16'>
           {/* Logo */}
           <Link
@@ -19,7 +19,7 @@ const NavbarLayout = () => {
           <div className='hidden md:flex items-center gap-8'>
             <Link
               to='/'
-              className='flex items-center gap-2 text-gray-700 hover:text-primary-600 transition-colors font-medium'
+              className='flex items-center gap-2 text-gray-700 hover:text-primary-600 hover:text-primary-600 transition-colors font-medium'
             >
               <Home size={18} />
               <span>Home</span>
