@@ -91,11 +91,7 @@ const Login = () => {
           {/* Logo */}
           <div className='text-center mb-8'>
             <Link to='/'>
-              <img
-                src='/logo.png'
-                alt='Logo'
-                className='h-20 mx-auto mb-6'
-              />
+              <img src='/logo.png' alt='Logo' className='h-20 mx-auto mb-6' />
             </Link>
             <h1 className='text-3xl font-bold text-gray-900 mb-2'>
               Welcome Back
