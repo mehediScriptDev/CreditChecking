@@ -110,29 +110,29 @@ const HomeView = () => {
 
       <div className='min-h-screen bg-gradient-to-br from-primary-50 via-white to-secondary-50'>
         {/* Hero Section */}
-        <section className='pt-24 pb-20 px-4'>
-          <div className='mx-auto'>
+        <section className='pt-24 pb-20 px-4 sm:px-6 lg:px-8'>
+          <div className='max-w-7xl mx-auto'>
             <div className='text-center mb-12 animate-slideDown'>
               <img
                 src='/logo.png'
                 alt='No Dispute Credit Logo'
-                className='h-32 mx-auto mb-8'
+                className='h-24 sm:h-32 mx-auto mb-8'>
               />
             </div>
 
             <div className='text-center max-w-4xl mx-auto'>
-              <h1 className='text-5xl md:text-7xl font-heading font-bold text-gray-900 mb-6 animate-slideUp leading-tight'>
+              <h1 className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-gray-900 mb-6 animate-slideUp leading-tight'>
                 No Dispute Credit
                 <span className='block text-primary-600 mt-2'>
                   Validation System
                 </span>
               </h1>
 
-              <p className='text-xl md:text-2xl text-gray-600 mb-4 animate-slideUp'>
+              <p className='text-lg sm:text-xl md:text-2xl text-gray-600 mb-4 animate-slideUp'>
                 Educational Platform for Credit Report Analysis
               </p>
 
-              <p className='text-lg text-gray-500 mb-10 max-w-2xl mx-auto animate-fadeIn'>
+              <p className='text-base sm:text-lg text-gray-500 mb-10 max-w-2xl mx-auto animate-fadeIn'>
                 Learn how credit bureaus report your data and understand what
                 impacts your credit score through our comprehensive validation
                 system
@@ -144,20 +144,21 @@ const HomeView = () => {
                     size='xl'
                     variant='primary'
                     rightIcon={<ArrowRight size={24} />}
+                    className='w-full sm:w-auto'
                   >
                     Start My Credit Assessment
                   </Button>
                 </Link>
                 <Link to='/resources'>
-                  <Button size='xl' variant='outline'>
+                  <Button size='xl' variant='outline' className='w-full sm:w-auto'>
                     View Resources
                   </Button>
                 </Link>
               </div>
 
-              <div className='inline-flex items-center gap-2 bg-warning-100 text-warning-800 px-6 py-3 rounded-full text-sm font-medium animate-fadeIn'>
-                <span className='text-xl'>⚠️</span>
-                <span>
+              <div className='inline-flex items-center gap-2 bg-warning-100 text-warning-800 px-4 sm:px-6 py-3 rounded-full text-xs sm:text-sm font-medium animate-fadeIn max-w-full'>
+                <span className='text-xl shrink-0'>⚠️</span>
+                <span className='text-left sm:text-center'>
                   Educational tool only • No disputes filed • No legal advice •
                   No guarantees
                 </span>
@@ -167,19 +168,19 @@ const HomeView = () => {
         </section>
 
         {/* Features Grid */}
-        <section className='py-20 px-4 bg-white'>
-          <div className='mx-auto'>
-            <div className='text-center mb-16'>
-              <h2 className='text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4'>
+        <section className='py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white'>
+          <div className='max-w-7xl mx-auto'>
+            <div className='text-center mb-12 sm:mb-16'>
+              <h2 className='text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4'>
                 Three Powerful Modules
               </h2>
-              <p className='text-xl text-gray-600 max-w-3xl mx-auto'>
+              <p className='text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto'>
                 Comprehensive credit education system designed to help you
                 understand your credit profile
               </p>
             </div>
 
-            <div className='grid lg:grid-cols-3 gap-8'>
+            <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8'>
               {features.map((feature, index) => (
                 <Card
                   key={index}
@@ -231,37 +232,37 @@ const HomeView = () => {
         </section>
 
         {/* How It Works */}
-        <section className='py-20 px-4 bg-gradient-to-br from-gray-50 to-gray-100'>
-          <div className='mx-auto'>
-            <div className='text-center mb-16'>
-              <h2 className='text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4'>
+        <section className='py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-gray-100'>
+          <div className='max-w-7xl mx-auto'>
+            <div className='text-center mb-12 sm:mb-16'>
+              <h2 className='text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4'>
                 How It Works
               </h2>
-              <p className='text-xl text-gray-600'>
+              <p className='text-lg sm:text-xl text-gray-600'>
                 Simple 4-step process to validate and understand your credit
               </p>
             </div>
 
-            <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-8'>
+            <div className='grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8'>
               {steps.map((step, index) => (
                 <div
                   key={index}
                   className='text-center animate-slideUp'
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <div className='relative mb-6'>
-                    <div className='w-20 h-20 bg-gradient-to-br from-primary-600 to-secondary-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto shadow-lg'>
+                  <div className='relative mb-4 sm:mb-6'>
+                    <div className='w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-primary-600 to-secondary-600 rounded-full flex items-center justify-center text-white text-xl sm:text-2xl font-bold mx-auto shadow-lg'>
                       {step.number}
                     </div>
-                    <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-primary-100 rounded-full -z-10 opacity-50'></div>
+                    <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 sm:w-24 sm:h-24 bg-primary-100 rounded-full -z-10 opacity-50'></div>
                   </div>
-                  <div className='mb-4 flex justify-center text-primary-600'>
+                  <div className='mb-3 sm:mb-4 flex justify-center text-primary-600'>
                     {step.icon}
                   </div>
-                  <h3 className='text-xl font-heading font-semibold text-gray-900 mb-2'>
+                  <h3 className='text-lg sm:text-xl font-heading font-semibold text-gray-900 mb-2'>
                     {step.title}
                   </h3>
-                  <p className='text-gray-600'>{step.description}</p>
+                  <p className='text-sm sm:text-base text-gray-600'>{step.description}</p>
                 </div>
               ))}
             </div>
@@ -269,28 +270,28 @@ const HomeView = () => {
         </section>
 
         {/* Benefits */}
-        <section className='py-20 px-4 bg-white'>
-          <div className='max-w-5xl mx-auto'>
-            <div className='text-center mb-16'>
-              <h2 className='text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4'>
+        <section className='py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white'>
+          <div className='max-w-6xl mx-auto'>
+            <div className='text-center mb-12 sm:mb-16'>
+              <h2 className='text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4'>
                 Why Choose No Dispute Credit?
               </h2>
-              <p className='text-xl text-gray-600'>
+              <p className='text-lg sm:text-xl text-gray-600'>
                 The educational platform designed with your success in mind
               </p>
             </div>
 
-            <div className='grid md:grid-cols-2 gap-6'>
+            <div className='grid sm:grid-cols-2 gap-4 sm:gap-6'>
               {benefits.map((benefit, index) => (
                 <div
                   key={index}
-                  className='flex items-start gap-4 p-6 bg-gradient-to-br from-success-50 to-white rounded-xl border border-success-100 animate-slideLeft'
+                  className='flex items-start gap-3 sm:gap-4 p-4 sm:p-6 bg-gradient-to-br from-success-50 to-white rounded-xl border border-success-100 animate-slideLeft'
                   style={{ animationDelay: `${index * 80}ms` }}
                 >
-                  <div className='flex-shrink-0 w-8 h-8 bg-success-600 rounded-full flex items-center justify-center'>
-                    <CheckCircle size={20} className='text-white' />
+                  <div className='shrink-0 w-7 h-7 sm:w-8 sm:h-8 bg-success-600 rounded-full flex items-center justify-center'>
+                    <CheckCircle size={18} className='text-white' />
                   </div>
-                  <p className='text-gray-700 text-lg font-medium pt-1'>
+                  <p className='text-gray-700 text-base sm:text-lg font-medium pt-0.5 sm:pt-1'>
                     {benefit}
                   </p>
                 </div>
@@ -300,52 +301,52 @@ const HomeView = () => {
         </section>
 
         {/* CTA Section */}
-        <section className='py-24 px-4 bg-gradient-to-br from-primary-600 via-primary-700 to-secondary-600 relative overflow-hidden'>
+        <section className='py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary-600 via-primary-700 to-secondary-600 relative overflow-hidden'>
           <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-10"></div>
           <div className='max-w-4xl mx-auto text-center relative z-10'>
-            <h2 className='text-4xl md:text-5xl font-heading font-bold text-white mb-6'>
+            <h2 className='text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-white mb-4 sm:mb-6'>
               Ready to Understand Your Credit?
             </h2>
-            <p className='text-xl md:text-2xl text-white opacity-90 mb-10'>
+            <p className='text-lg sm:text-xl md:text-2xl text-white opacity-90 mb-8 sm:mb-10'>
               Join thousands learning how credit bureaus report data and what
               impacts their scores
             </p>
             <div className='flex flex-col sm:flex-row gap-4 justify-center'>
-              <Link to='/register'>
+              <Link to='/register' className='w-full sm:w-auto'>
                 <Button
                   size='xl'
-                  className='bg-white text-primary-600 hover:bg-gray-50 shadow-2xl'
+                  className='bg-white text-primary-600 hover:bg-gray-50 shadow-2xl w-full sm:w-auto'
                   rightIcon={<ArrowRight size={24} />}
                 >
                   Start Your Journey - It's Free
                 </Button>
               </Link>
-              <Link to='/resources'>
+              <Link to='/resources' className='w-full sm:w-auto'>
                 <Button
                   size='xl'
                   variant='outline'
-                  className='border-2 border-white text-white hover:bg-white hover:text-primary-600'
+                  className='border-2 border-white text-white hover:bg-white hover:text-primary-600 w-full sm:w-auto'
                 >
                   Learn More
                 </Button>
               </Link>
             </div>
-            <p className='text-white text-sm mt-8 opacity-75'>
+            <p className='text-white text-xs sm:text-sm mt-6 sm:mt-8 opacity-75'>
               No credit card required • Start immediately • Cancel anytime
             </p>
           </div>
         </section>
 
         {/* Educational Disclaimer */}
-        <section className='py-12 px-4 bg-gray-900 text-white'>
+        <section className='py-10 sm:py-12 px-4 sm:px-6 lg:px-8 bg-gray-900 text-white'>
           <div className='max-w-5xl mx-auto'>
-            <div className='text-center mb-6'>
-              <h3 className='text-2xl font-heading font-bold mb-3'>
+            <div className='text-center mb-4 sm:mb-6'>
+              <h3 className='text-xl sm:text-2xl font-heading font-bold mb-2 sm:mb-3'>
                 Educational Disclaimer
               </h3>
             </div>
-            <div className='bg-gray-800 rounded-xl p-8 border border-gray-700'>
-              <p className='text-gray-300 leading-relaxed text-center'>
+            <div className='bg-gray-800 rounded-xl p-6 sm:p-8 border border-gray-700'>
+              <p className='text-sm sm:text-base text-gray-300 leading-relaxed text-center'>
                 This is an educational tool. <strong>No Dispute Credit</strong>{' '}
                 does not file disputes, provide legal/tax/financial advice, or
                 guarantee outcomes. We do not submit data to credit bureaus.
