@@ -25,3 +25,11 @@ export const setUser = (user) => {
 export const removeUser = () => {
   localStorage.removeItem(STORAGE_KEYS.USER);
 };
+
+// Clear all auth data
+export const clearAuth = () => {
+  removeToken();
+  removeUser();
+  localStorage.removeItem(STORAGE_KEYS.REFRESH_TOKEN);
+  localStorage.removeItem(STORAGE_KEYS.REMEMBER_ME);
+};

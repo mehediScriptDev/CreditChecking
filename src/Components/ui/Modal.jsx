@@ -1,0 +1,97 @@
+import { Fragment } from 'react';
+import { createPortal } from 'react-dom';
+import { X } from 'lucide-react';
+import Button from './Button';
+
+/**
+ * Modal Component - Accessible modal dialog with overlay
+ */
+
+const Modal = ({
+  isOpen,
+  onClose,
+  title,
+  children,
+  footer,
+  size = 'md',
+  closeOnOverlayClick = true,
+  showCloseButton = true,
+  className = '',
+}) => {
+  if (!isOpen) return null;
+
+  // Size variants
+  const sizes = {
+    sm: 'max-w-md',
+    md: 'max-w-lg',
+    lg: 'max-w-2xl',
+    xl: 'max-w-4xl',
+    full: 'max-w-full mx-4',
+  };
+
+  const handleOverlayClick = (e) => {
+    if (closeOnOverlayClick && e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
+  const modalContent = (
+    <Fragment>
+      {/* Overlay */}
+      <div
+        className='fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-50 transition-opacity duration-300 animate-fadeIn'
+        onClick={handleOverlayClick}
+      >
+        {/* Modal Container */}
+        <div className='flex items-center justify-center min-h-screen p-4'>
+          {/* Modal Content */}
+          <div
+            className={`bg-white rounded-xl shadow-2xl w-full ${sizes[size]} transform transition-all duration-300 animate-scaleIn ${className}`}
+            role='dialog'
+            aria-modal='true'
+            aria-labelledby='modal-title'
+          >
+            {/* Header */}
+            {(title || showCloseButton) && (
+              <div className='flex items-center justify-between p-6 border-b border-gray-200'>
+                {title && (
+                  <h2
+                    id='modal-title'
+                    className='text-2xl font-heading font-semibold text-gray-900'
+                  >
+                    {title}
+                  </h2>
+                )}
+                {showCloseButton && (
+                  <button
+                    onClick={onClose}
+                    className='text-gray-400 hover:text-gray-600 transition-colors p-1 rounded-lg hover:bg-gray-100'
+                    aria-label='Close modal'
+                  >
+                    <X size={24} />
+                  </button>
+                )}
+              </div>
+            )}
+
+            {/* Body */}
+            <div className='p-6 max-h-[calc(100vh-200px)] overflow-y-auto'>
+              {children}
+            </div>
+
+            {/* Footer */}
+            {footer && (
+              <div className='flex items-center justify-end gap-3 p-6 border-t border-gray-200 bg-gray-50 rounded-b-xl'>
+                {footer}
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </Fragment>
+  );
+
+  return createPortal(modalContent, document.body);
+};
+
+export default Modal;

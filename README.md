@@ -1,4 +1,4 @@
-# CrapUI
+# No Dispute Credit Validation System
 
 CrapUI is a refined React starter built for developers who want speed, clarity, and a production-ready foundation without the usual setup fatigue. It combines modern tooling, clean defaults, and an intuitive structure so you can focus on building — not configuring.
 
