@@ -111,7 +111,7 @@ const HomeView = () => {
       <div className='min-h-screen bg-gradient-to-br from-primary-50 via-white to-secondary-50'>
         {/* Hero Section */}
         <section className='pt-24 pb-20 px-4'>
-          <div className='max-w-7xl mx-auto'>
+          <div className='mx-auto'>
             <div className='text-center mb-12 animate-slideDown'>
               <img
                 src='/logo.png'
@@ -168,7 +168,7 @@ const HomeView = () => {
 
         {/* Features Grid */}
         <section className='py-20 px-4 bg-white'>
-          <div className='max-w-7xl mx-auto'>
+          <div className='mx-auto'>
             <div className='text-center mb-16'>
               <h2 className='text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4'>
                 Three Powerful Modules
@@ -232,7 +232,7 @@ const HomeView = () => {
 
         {/* How It Works */}
         <section className='py-20 px-4 bg-gradient-to-br from-gray-50 to-gray-100'>
-          <div className='max-w-7xl mx-auto'>
+          <div className='mx-auto'>
             <div className='text-center mb-16'>
               <h2 className='text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4'>
                 How It Works
