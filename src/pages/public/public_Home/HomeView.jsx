@@ -108,9 +108,9 @@ const HomeView = () => {
         <meta name='keywords' content={metadata.keywords} />
       </Helmet>
 
-      <div className='min-h-screen bg-gradient-to-br from-primary-50 via-white to-secondary-50'>
+      <div className='min-h-screen bg-linear-to-br from-primary-50 via-white to-secondary-50'>
         {/* Hero Section */}
-        <section className='pt-24 pb-20 px-4 sm:px-6 lg:px-8'>
+        <section className='pt-24 pb-24 px-4 sm:px-6 lg:px-8'>
           <div className='max-w-7xl mx-auto'>
             <div className='text-center mb-12 animate-slideDown'>
               <img
@@ -161,7 +161,6 @@ const HomeView = () => {
               </div>
 
               <div className='inline-flex items-center gap-2 bg-warning-100 text-warning-800 px-4 sm:px-6 py-3 rounded-full text-xs sm:text-sm font-medium animate-fadeIn max-w-full'>
-                <span className='text-xl shrink-0'>⚠️</span>
                 <span className='text-left sm:text-center'>
                   Educational tool only • No disputes filed • No legal advice •
                   No guarantees
