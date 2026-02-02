@@ -5,19 +5,15 @@ import SmoothScroll from '../components/utility/SmoothScroll';
 
 const RootLayout = () => {
   return (
-    <>
-      <header>
-        <NavbarLayout />
-      </header>
-      <main>
-       <SmoothScroll>
-         <Outlet />
-       </SmoothScroll>
+    <div className='min-h-screen flex flex-col'>
+      <NavbarLayout />
+      <main className='flex-1 pt-20'>
+        <SmoothScroll>
+          <Outlet />
+        </SmoothScroll>
       </main>
-      <footer>
-        <FooterLayout />
-      </footer>
-    </>
+      <FooterLayout />
+    </div>
   );
 };
 

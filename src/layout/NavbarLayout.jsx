@@ -9,7 +9,7 @@ const NavbarLayout = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <header className='bg-white shadow-md sticky top-0 z-50 border-b border-gray-100'>
+    <header className='bg-white shadow-md fixed top-0 left-0 right-0 z-50 border-b border-gray-100'>
       <nav className='container mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='flex justify-between items-center h-20'>
           {/* Logo */}
