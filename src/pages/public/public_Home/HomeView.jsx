@@ -236,7 +236,7 @@ const HomeView = () => {
         </section>
 
         {/* How It Works */}
-        <section className='py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-gray-100'>
+        <section className='py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-gray-50 to-gray-100'>
           <div className='container mx-auto'>
             <div className='text-center mb-12 sm:mb-16'>
               <h2 className='text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4'>
@@ -255,7 +255,7 @@ const HomeView = () => {
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <div className='relative mb-4 sm:mb-6'>
-                    <div className='w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-primary-600 to-secondary-600 rounded-full flex items-center justify-center text-white text-xl sm:text-2xl font-bold mx-auto shadow-lg'>
+                    <div className='w-16 h-16 sm:w-20 sm:h-20 bg-linear-to-br from-primary-600 to-secondary-600 rounded-full flex items-center justify-center text-white text-xl sm:text-2xl font-bold mx-auto shadow-lg'>
                       {step.number}
                     </div>
                     <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 sm:w-24 sm:h-24 bg-primary-100 rounded-full -z-10 opacity-50'></div>
@@ -291,7 +291,7 @@ const HomeView = () => {
               {benefits.map((benefit, index) => (
                 <div
                   key={index}
-                  className='flex items-start gap-3 sm:gap-4 p-4 sm:p-6 bg-gradient-to-br from-success-50 to-white rounded-xl border border-success-100 animate-slideLeft'
+                  className='flex items-start gap-3 sm:gap-4 p-4 sm:p-6 bg-linear-to-br from-success-50 to-white rounded-xl border border-success-100 animate-slideLeft'
                   style={{ animationDelay: `${index * 80}ms` }}
                 >
                   <div className='shrink-0 w-7 h-7 sm:w-8 sm:h-8 bg-success-600 rounded-full flex items-center justify-center'>
@@ -307,7 +307,7 @@ const HomeView = () => {
         </section>
 
         {/* CTA Section */}
-        <section className='py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary-600 via-primary-700 to-secondary-600 relative overflow-hidden'>
+        <section className='py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-primary-600 via-primary-700 to-secondary-600 relative overflow-hidden'>
           <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-10"></div>
           <div className='max-w-4xl mx-auto text-center relative z-10'>
             <h2 className='text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-white mb-4 sm:mb-6'>
