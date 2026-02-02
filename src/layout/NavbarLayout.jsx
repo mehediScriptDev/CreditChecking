@@ -17,7 +17,7 @@ const NavbarLayout = () => {
             to='/'
             className='flex items-center hover:opacity-80 transition-all duration-300'
           >
-            <img src='/logo.png' alt='Logo' className='h-14' />
+            <img src='/logo.png' alt='Logo' className='h-16' />
           </Link>
 
           {/* Desktop Navigation */}
