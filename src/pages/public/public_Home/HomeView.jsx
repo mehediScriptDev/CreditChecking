@@ -193,7 +193,7 @@ const HomeView = () => {
                   style={{ animationDelay: `${index * 150}ms` }}
                 >
                   <CardHeader>
-                    <div className='mb-6 p-4 bg-gradient-to-br from-primary-50 to-secondary-50 rounded-xl inline-block'>
+                    <div className='mb-6 p-4 bg-linear-to-br from-primary-50 to-secondary-50 rounded-xl inline-block'>
                       {feature.icon}
                     </div>
                     <CardTitle className='text-2xl mb-3'>
@@ -212,7 +212,7 @@ const HomeView = () => {
                         >
                           <CheckCircle
                             size={16}
-                            className='text-success-600 flex-shrink-0'
+                            className='text-success-600 shrink-0'
                           />
                           <span>{detail}</span>
                         </li>
