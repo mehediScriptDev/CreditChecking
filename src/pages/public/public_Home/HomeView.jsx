@@ -208,7 +208,7 @@ const HomeView = () => {
                       {feature.details.map((detail, idx) => (
                         <li
                           key={idx}
-                          className='flex items-center gap-2 text-sm text-gray-700'
+                          className='flex items-center gap-2 text-base text-gray-700'
                         >
                           <CheckCircle
                             size={16}
