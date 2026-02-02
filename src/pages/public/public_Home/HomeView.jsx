@@ -111,7 +111,7 @@ const HomeView = () => {
       <div className='min-h-screen bg-linear-to-br from-primary-50 via-white to-secondary-50'>
         {/* Hero Section */}
         <section className='pt-24 pb-24 px-4 sm:px-6 lg:px-8'>
-          <div className='max-w-7xl mx-auto'>
+          <div className='container mx-auto'>
             <div className='text-center mb-12 animate-slideDown'>
               <img
                 src='/logo.png'
@@ -171,8 +171,8 @@ const HomeView = () => {
         </section>
 
         {/* Features Grid */}
-        <section className='py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white'>
-          <div className='max-w-7xl mx-auto'>
+        <section className='py-16 sm:py-20 bg-white'>
+          <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
             <div className='text-center mb-12 sm:mb-16'>
               <h2 className='text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4'>
                 Three Powerful Modules
@@ -183,46 +183,47 @@ const HomeView = () => {
               </p>
             </div>
 
-            <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8'>
+            <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8'>
               {features.map((feature, index) => (
                 <Card
                   key={index}
                   hoverable
                   elevation='lg'
-                  className='animate-slideUp border-2 border-transparent hover:border-primary-200'
+                  className='animate-slideUp border-2 border-transparent hover:border-primary-200 transition-all duration-300 flex flex-col h-full'
                   style={{ animationDelay: `${index * 150}ms` }}
                 >
-                  <CardHeader>
-                    <div className='mb-6 p-4 bg-linear-to-br from-primary-50 to-secondary-50 rounded-xl inline-block'>
+                  <CardHeader className='flex-shrink-0 text-center'>
+                    <div className='mb-6 p-4 bg-gradient-to-br from-primary-50 to-secondary-50 rounded-xl inline-block mx-auto'>
                       {feature.icon}
                     </div>
-                    <CardTitle className='text-2xl mb-3'>
+                    <CardTitle className='text-2xl mb-3 leading-tight'>
                       {feature.title}
                     </CardTitle>
-                    <CardDescription className='text-base'>
+                    <CardDescription className='text-base text-gray-600 leading-relaxed min-h-[3rem]'>
                       {feature.description}
                     </CardDescription>
                   </CardHeader>
-                  <CardContent>
-                    <ul className='space-y-2 mb-6'>
+                  <CardContent className='flex-grow flex flex-col justify-between'>
+                    <ul className='space-y-3 mb-6'>
                       {feature.details.map((detail, idx) => (
                         <li
                           key={idx}
-                          className='flex items-center gap-2 text-base text-gray-700'
+                          className='flex items-center gap-3 text-base text-gray-700'
                         >
                           <CheckCircle
-                            size={16}
-                            className='text-success-600 shrink-0'
+                            size={18}
+                            className='text-success-600 flex-shrink-0'
                           />
-                          <span>{detail}</span>
+                          <span className='leading-snug'>{detail}</span>
                         </li>
                       ))}
                     </ul>
-                    <Link to={feature.link}>
+                    <Link to={feature.link} className='mt-auto'>
                       <Button
                         variant='primary'
                         fullWidth
                         rightIcon={<ArrowRight size={18} />}
+                        className='shadow-sm hover:shadow-md transition-shadow'
                       >
                         Get Started
                       </Button>
@@ -236,7 +237,7 @@ const HomeView = () => {
 
         {/* How It Works */}
         <section className='py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-gray-100'>
-          <div className='max-w-7xl mx-auto'>
+          <div className='container mx-auto'>
             <div className='text-center mb-12 sm:mb-16'>
               <h2 className='text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4'>
                 How It Works
