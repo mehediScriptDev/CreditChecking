@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
 import {
   Users,
   FileText,
@@ -127,11 +126,6 @@ const AdminDashboard = () => {
 
   return (
     <>
-      <Helmet>
-        <title>{metadata.title}</title>
-        <meta name='description' content={metadata.description} />
-      </Helmet>
-
       <div className='space-y-6'>
         {/* Header */}
         <div className='flex items-center justify-between'>

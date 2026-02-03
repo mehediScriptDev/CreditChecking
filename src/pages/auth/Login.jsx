@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router';
-import { Helmet } from 'react-helmet-async';
 import { Mail, Lock, ArrowRight } from 'lucide-react';
 import { toast } from 'react-toastify';
 import Input from '../../components/ui/Input';
@@ -81,11 +80,6 @@ const Login = () => {
 
   return (
     <>
-      <Helmet>
-        <title>{metadata.title}</title>
-        <meta name='description' content={metadata.description} />
-      </Helmet>
-
       <div className='min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 via-white to-gray-100 py-12 px-4'>
         <div className='w-full max-w-md'>
           {/* Logo */}

@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router';
 import { Home, ArrowLeft } from 'lucide-react';
 import Button from '../../components/ui/Button';
@@ -6,14 +5,6 @@ import Button from '../../components/ui/Button';
 const NotFound = () => {
   return (
     <>
-      <Helmet>
-        <title>404 - Page Not Found | No Dispute Credit</title>
-        <meta
-          name='description'
-          content="The page you're looking for doesn't exist."
-        />
-      </Helmet>
-
       <div className='min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-50 via-white to-secondary-50 px-4'>
         <div className='text-center'>
           <div className='mb-8'>

@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router';
-import { Helmet } from 'react-helmet-async';
 import { Mail, Lock, User, ArrowRight } from 'lucide-react';
 import { toast } from 'react-toastify';
 import Input from '../../components/ui/Input';
@@ -102,11 +101,6 @@ const Register = () => {
 
   return (
     <>
-      <Helmet>
-        <title>{metadata.title}</title>
-        <meta name='description' content={metadata.description} />
-      </Helmet>
-
       <div className='min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-50 via-white to-secondary-50 py-12 px-4'>
         <div className='w-full max-w-md'>
           {/* Logo */}

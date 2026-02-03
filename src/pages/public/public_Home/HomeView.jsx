@@ -1,5 +1,4 @@
 import { Link } from 'react-router';
-import { Helmet } from 'react-helmet-async';
 import {
   ArrowRight,
   CheckCircle,
@@ -102,12 +101,6 @@ const HomeView = () => {
 
   return (
     <>
-      <Helmet>
-        <title>{metadata.title}</title>
-        <meta name='description' content={metadata.description} />
-        <meta name='keywords' content={metadata.keywords} />
-      </Helmet>
-
       <div className='min-h-screen bg-linear-to-br from-primary-50 via-white to-secondary-50'>
         {/* Hero Section */}
         <section className='pt-24 pb-24 px-4 sm:px-6 lg:px-8'>

@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router';
 import {
   FileText,
@@ -117,11 +116,6 @@ const Dashboard = () => {
 
   return (
     <>
-      <Helmet>
-        <title>{metadata.title}</title>
-        <meta name='description' content={metadata.description} />
-      </Helmet>
-
       <div className='space-y-6'>
         {/* Welcome Header */}
         <div className='bg-gradient-to-r from-primary-600 to-secondary-600 rounded-xl p-8 text-white shadow-xl'>
