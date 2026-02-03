@@ -3,7 +3,7 @@ import RootLayout from '../layout/RootLayout';
 import PublicLayout from '../layout/PublicLayout';
 import UserLayout from '../layout/UserLayout';
 import AdminLayout from '../layout/AdminLayout';
-import ProtectedRoute from '../components/ProtectedRoute';
+import ProtectedRoute from '../Components/ProtectedRoute';
 
 // Public Pages
 import HomeView from '../pages/public/public_Home/HomeView';
