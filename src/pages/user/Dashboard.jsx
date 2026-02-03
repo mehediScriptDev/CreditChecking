@@ -15,10 +15,10 @@ import Card, {
   CardTitle,
   CardDescription,
   CardContent,
-} from '../../components/ui/Card';
-import Button from '../../components/ui/Button';
-import ProgressBar from '../../components/ui/ProgressBar';
-import StatusBadge from '../../components/ui/StatusBadge';
+} from '../Components/ui/Card';
+import Button from '../Components/ui/Button';
+import ProgressBar from '../Components/ui/ProgressBar';
+import StatusBadge from '../Components/ui/StatusBadge';
 import { userService } from '../../services/apiService';
 import { getPageMetadata } from '../../utils/seo';
 import { toast } from 'react-toastify';

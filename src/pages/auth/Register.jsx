@@ -2,15 +2,15 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { Mail, Lock, User, ArrowRight } from 'lucide-react';
 import { toast } from 'react-toastify';
-import Input from '../../components/ui/Input';
-import Button from '../../components/ui/Button';
+import Input from '../Components/ui/Input';
+import Button from '../Components/ui/Button';
 import Card, {
   CardHeader,
   CardTitle,
   CardDescription,
   CardContent,
   CardFooter,
-} from '../../components/ui/Card';
+} from '../Components/ui/Card';
 import { authService } from '../../services/apiService';
 import { setToken, setUser } from '../../utils/storage';
 import { getPageMetadata } from '../../utils/seo';

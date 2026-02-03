@@ -14,10 +14,10 @@ import Card, {
   CardTitle,
   CardDescription,
   CardContent,
-} from '../../components/ui/Card';
-import Button from '../../components/ui/Button';
-import Table, { TablePagination } from '../../components/ui/Table';
-import StatusBadge from '../../components/ui/StatusBadge';
+} from '../Components/ui/Card';
+import Button from '../Components/ui/Button';
+import Table, { TablePagination } from '../Components/ui/Table';
+import StatusBadge from '../Components/ui/StatusBadge';
 import { adminService } from '../../services/apiService';
 import { getPageMetadata } from '../../utils/seo';
 import { toast } from 'react-toastify';

@@ -9,13 +9,13 @@ import {
   Eye,
   Calendar,
 } from 'lucide-react';
-import Button from '../../../components/ui/Button';
+import Button from '../Components/ui/Button';
 import Card, {
   CardContent,
   CardHeader,
   CardTitle,
   CardDescription,
-} from '../../../components/ui/Card';
+} from '../Components/ui/Card';
 import { getPageMetadata } from '../../../utils/seo';
 
 const HomeView = () => {
