@@ -24,12 +24,6 @@ const LoadingSpinner = () => (
   </svg>
 );
 
-/**
- * Button Component - Production-grade button with multiple variants
- * Supports: primary, secondary, outline, ghost, danger
- * Sizes: sm, md, lg, xl
- */
-
 const Button = forwardRef(
   (
     {
