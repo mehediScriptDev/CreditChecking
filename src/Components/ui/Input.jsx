@@ -1,9 +1,5 @@
 import { forwardRef } from 'react';
 
-/**
- * Input Component - Versatile input field with validation states
- */
-
 const Input = forwardRef(
   (
     {
