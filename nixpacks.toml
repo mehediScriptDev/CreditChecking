@@ -1,3 +1,6 @@
+[phases.setup]
+nixpkgs = ["nodejs_20"]
+
 [phases.install]
 cmds = ["npm ci"]
 
