@@ -13,7 +13,7 @@ import {
   ChevronDown,
 } from 'lucide-react';
 import { removeToken, removeUser, getUser } from '../utils/storage';
-import Button from '../components/ui/Button';
+import Button from '../Components/ui/Button';
 import { toast } from 'react-toastify';
 
 const UserLayout = () => {

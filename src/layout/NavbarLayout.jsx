@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router';
 import { useState } from 'react';
-import Button from '../components/ui/Button';
+import Button from '../Components/ui/Button';
 
 const NavbarLayout = () => {
   const location = useLocation();
