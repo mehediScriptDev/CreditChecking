@@ -1,6 +1,6 @@
 import { Link } from 'react-router';
 import { Home, ArrowLeft } from 'lucide-react';
-import Button from '../Components/ui/Button';
+import Button from '../../Components/ui/Button';
 
 const NotFound = () => {
   return (
