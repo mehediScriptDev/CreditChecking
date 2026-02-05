@@ -123,11 +123,7 @@ const DashboardLayout = () => {
               to={isAdmin ? '/admin/dashboard' : '/dashboard'}
               className='flex items-center justify-center'
             >
-              {isAdmin ? (
-                <Shield className='text-primary-500' size={320} />
-              ) : (
-                <img src='/footerLogo.png' alt='Logo' className='h-10' />
-              )}
+              <img src='/footerLogo.png' alt='Logo' className='h-10' />
             </Link>
           </div>
 
@@ -144,7 +140,7 @@ const DashboardLayout = () => {
                 to={item.path}
                 className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
                   isActive(item.path)
-                    ? 'bg-linear-to-r from-primary-600 to-primary-500 text-white shadow-lg'
+                    ? 'bg-gradient-to-r from-primary-600 to-primary-500 text-white shadow-lg'
                     : 'text-gray-300 hover:bg-gray-800 hover:text-white'
                 }`}
               >
@@ -166,7 +162,7 @@ const DashboardLayout = () => {
                     to={item.path}
                     className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
                       isActive(item.path)
-                        ? 'bg-linear-to-r from-primary-600 to-primary-500 text-white shadow-lg'
+                        ? 'bg-gradient-to-r from-primary-600 to-primary-500 text-white shadow-lg'
                         : 'text-gray-300 hover:bg-gray-800 hover:text-white'
                     }`}
                   >
@@ -208,11 +204,7 @@ const DashboardLayout = () => {
       <div className='lg:hidden fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 px-4 py-3 shadow-sm'>
         <div className='flex items-center justify-between'>
           <div className='flex items-center gap-2'>
-            {isAdmin ? (
-              <Shield className='text-primary-600' size={28} />
-            ) : (
-              <img src='/logo.png' alt='Logo' className='h-8' />
-            )}
+            <img src='/logo.png' alt='Logo' className='h-8' />
           </div>
           <button
             onClick={() => setSidebarOpen(!sidebarOpen)}
@@ -244,11 +236,7 @@ const DashboardLayout = () => {
               to={isAdmin ? '/admin/dashboard' : '/dashboard'}
               className='flex items-center gap-3'
             >
-              {isAdmin ? (
-                <Shield className='text-primary-500' size={28} />
-              ) : (
-                <img src='/footerLogo.png' alt='Logo' className='h-8' />
-              )}
+              <img src='/footerLogo.png' alt='Logo' className='h-8' />
             </Link>
             <button
               onClick={() => setSidebarOpen(false)}
