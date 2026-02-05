@@ -11,9 +11,6 @@ const FooterLayout = () => {
           <div className='md:col-span-2'>
             <div className='flex items-center gap-3 mb-4'>
               <img src='/logo.png' alt='Logo' className='h-12' />
-              <span className='font-heading font-bold text-xl'>
-                No Dispute Credit
-              </span>
             </div>
             <p className='text-gray-400 text-sm mb-4'>
               Educational credit validation platform helping you understand how
