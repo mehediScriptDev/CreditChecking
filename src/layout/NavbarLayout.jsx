@@ -1,10 +1,13 @@
 import { Link, useLocation } from 'react-router';
 import { useState } from 'react';
 import Button from '../Components/ui/Button';
+import { getUser } from '../utils/storage';
 
 const NavbarLayout = () => {
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const user = getUser();
+  const isLoggedIn = !!user;
 
   const isActive = (path) => location.pathname === path;
 
@@ -35,6 +38,21 @@ const NavbarLayout = () => {
                 <span className='absolute bottom-0 left-0 w-full h-0.5 bg-primary rounded-full'></span>
               )}
             </Link>
+            {isLoggedIn && (
+              <Link
+                to={user?.role === 'admin' ? '/admin/dashboard' : '/dashboard'}
+                className={`text-base font-medium transition-all duration-300 relative py-2 ${
+                  isActive('/dashboard') || isActive('/admin/dashboard')
+                    ? 'text-primary font-semibold'
+                    : 'text-gray-600 hover:text-primary'
+                }`}
+              >
+                Dashboard
+                {(isActive('/dashboard') || isActive('/admin/dashboard')) && (
+                  <span className='absolute bottom-0 left-0 w-full h-0.5 bg-primary rounded-full'></span>
+                )}
+              </Link>
+            )}
             <Link
               to='/resources'
               className={`text-base font-medium transition-all duration-300 relative py-2 ${
@@ -65,24 +83,40 @@ const NavbarLayout = () => {
 
           {/* Auth Buttons - Desktop */}
           <div className=' hidden lg:flex items-center gap-4'>
-            <Link to='/login'>
-              <Button
-                variant='outline'
-                size='md'
-                className='text-gray-700 border-gray-300 hover:border-primary hover:text-primary hover:bg-primary/5 transition-all duration-300 font-medium px-6'
+            {isLoggedIn ? (
+              <Link
+                to={user?.role === 'admin' ? '/admin/dashboard' : '/dashboard'}
               >
-                Login
-              </Button>
-            </Link>
-            <Link to='/register'>
-              <Button
-                variant='primary'
-                size='md'
-                className='bg-primary hover:bg-primary-600 shadow-sm hover:shadow-md transition-all duration-300 font-medium px-6'
-              >
-                Get Started
-              </Button>
-            </Link>
+                <Button
+                  variant='primary'
+                  size='md'
+                  className='bg-primary hover:bg-primary-600 shadow-sm hover:shadow-md transition-all duration-300 font-medium px-6'
+                >
+                  Go to Dashboard
+                </Button>
+              </Link>
+            ) : (
+              <>
+                <Link to='/login'>
+                  <Button
+                    variant='outline'
+                    size='md'
+                    className='text-gray-700 border-gray-300 hover:border-primary hover:text-primary hover:bg-primary/5 transition-all duration-300 font-medium px-6'
+                  >
+                    Login
+                  </Button>
+                </Link>
+                <Link to='/register'>
+                  <Button
+                    variant='primary'
+                    size='md'
+                    className='bg-primary hover:bg-primary-600 shadow-sm hover:shadow-md transition-all duration-300 font-medium px-6'
+                  >
+                    Get Started
+                  </Button>
+                </Link>
+              </>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -124,6 +158,21 @@ const NavbarLayout = () => {
               >
                 Home
               </Link>
+              {isLoggedIn && (
+                <Link
+                  to={
+                    user?.role === 'admin' ? '/admin/dashboard' : '/dashboard'
+                  }
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`text-base font-medium py-2 px-4 rounded-lg transition-all ${
+                    isActive('/dashboard') || isActive('/admin/dashboard')
+                      ? 'text-primary bg-primary/10 font-semibold'
+                      : 'text-gray-600 hover:bg-gray-50 hover:text-primary'
+                  }`}
+                >
+                  Dashboard
+                </Link>
+              )}
               <Link
                 to='/resources'
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -147,22 +196,46 @@ const NavbarLayout = () => {
                 About
               </Link>
               <div className='pt-4 flex flex-col space-y-3'>
-                <Link to='/login' onClick={() => setIsMobileMenuOpen(false)}>
-                  <Button
-                    variant='outline'
-                    className='w-full text-gray-700 border-gray-300 hover:border-primary hover:text-primary hover:bg-primary/5 transition-all font-medium'
+                {isLoggedIn ? (
+                  <Link
+                    to={
+                      user?.role === 'admin' ? '/admin/dashboard' : '/dashboard'
+                    }
+                    onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    Login
-                  </Button>
-                </Link>
-                <Link to='/register' onClick={() => setIsMobileMenuOpen(false)}>
-                  <Button
-                    variant='primary'
-                    className='w-full bg-primary hover:bg-primary-600 shadow-sm transition-all font-medium'
-                  >
-                    Get Started
-                  </Button>
-                </Link>
+                    <Button
+                      variant='primary'
+                      className='w-full bg-primary hover:bg-primary-600 shadow-sm transition-all font-medium'
+                    >
+                      Go to Dashboard
+                    </Button>
+                  </Link>
+                ) : (
+                  <>
+                    <Link
+                      to='/login'
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <Button
+                        variant='outline'
+                        className='w-full text-gray-700 border-gray-300 hover:border-primary hover:text-primary hover:bg-primary/5 transition-all font-medium'
+                      >
+                        Login
+                      </Button>
+                    </Link>
+                    <Link
+                      to='/register'
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <Button
+                        variant='primary'
+                        className='w-full bg-primary hover:bg-primary-600 shadow-sm transition-all font-medium'
+                      >
+                        Get Started
+                      </Button>
+                    </Link>
+                  </>
+                )}
               </div>
             </div>
           </div>
