@@ -185,8 +185,8 @@ const HomeView = () => {
                   className='animate-slideUp border-2 border-transparent hover:border-primary-200 transition-all duration-300 flex flex-col h-full'
                   style={{ animationDelay: `${index * 150}ms` }}
                 >
-                  <CardHeader className='flex-shrink-0 text-center'>
-                    <div className='mb-6 p-4 bg-gradient-to-br from-primary-50 to-secondary-50 rounded-xl inline-block mx-auto'>
+                  <CardHeader className='shrink-0 text-center'>
+                    <div className='mb-6 p-4 bg-linear-to-br from-primary-50 to-secondary-50 rounded-xl inline-block mx-auto'>
                       {feature.icon}
                     </div>
                     <CardTitle className='text-2xl mb-3 leading-tight'>
@@ -336,27 +336,6 @@ const HomeView = () => {
               </div>
               <p className='text-white text-xs sm:text-sm mt-6 sm:mt-8 opacity-75'>
                 No credit card required • Start immediately • Cancel anytime
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Educational Disclaimer */}
-        <section className='py-10 sm:py-12 px-4 sm:px-6 lg:px-8 bg-gray-900 text-white'>
-          <div className='max-w-5xl mx-auto'>
-            <div className='text-center mb-4 sm:mb-6'>
-              <h3 className='text-xl sm:text-2xl font-heading font-bold mb-2 sm:mb-3'>
-                Educational Disclaimer
-              </h3>
-            </div>
-            <div className='bg-gray-800 rounded-xl p-6 sm:p-8 border border-gray-700'>
-              <p className='text-sm sm:text-base text-gray-300 leading-relaxed text-center'>
-                This is an educational tool. <strong>No Dispute Credit</strong>{' '}
-                does not file disputes, provide legal/tax/financial advice, or
-                guarantee outcomes. We do not submit data to credit bureaus.
-                This system teaches users how lenders and scoring models
-                interpret credit data. All information provided is for
-                educational purposes only.
               </p>
             </div>
           </div>
