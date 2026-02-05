@@ -311,20 +311,22 @@ const HomeView = () => {
               impacts their scores
             </p>
             <div className='flex flex-col sm:flex-row gap-4 justify-center'>
-              <Link to='/register' className='w-full sm:w-auto'>
+              <Link to='/register'>
                 <Button
                   size='xl'
-                  className='bg-white text-primary-600 hover:bg-gray-50 shadow-2xl w-full sm:w-auto'
-                  rightIcon={<ArrowRight size={24} />}
+                  className='bg-white text-primary-600! hover:bg-gray-50 shadow-2xl w-full sm:w-auto'
+                  rightIcon={
+                    <ArrowRight size={24} className='text-primary-600' />
+                  }
                 >
                   Start Your Journey - It's Free
                 </Button>
               </Link>
-              <Link to='/resources' className='w-full sm:w-auto'>
+              <Link to='/resources'>
                 <Button
                   size='xl'
                   variant='outline'
-                  className='border-2 border-white text-white hover:bg-white hover:text-primary-600 w-full sm:w-auto'
+                  className='border-2 border-white text-white! hover:bg-white hover:text-primary-600! w-full sm:w-auto'
                 >
                   Learn More
                 </Button>
