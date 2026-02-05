@@ -229,8 +229,8 @@ const HomeView = () => {
         </section>
 
         {/* How It Works */}
-        <section className='py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-gray-50 to-gray-100'>
-          <div className='container mx-auto'>
+        <section className='py-16 sm:py-20 bg-linear-to-br from-gray-50 to-gray-100'>
+          <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
             <div className='text-center mb-12 sm:mb-16'>
               <h2 className='text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4'>
                 How It Works
