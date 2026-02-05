@@ -143,7 +143,7 @@ const AboutView = () => {
                 </p>
               ))}
             </div>
-            <div className='bg-gradient-to-r from-warning-50 to-danger-50 rounded-2xl p-8 sm:p-12 mb-8 animate-slideUp border border-warning-200'>
+            <div className='bg-linear-to-r from-warning-50 to-danger-50 rounded-2xl p-8 sm:p-12 mb-8 animate-slideUp border border-warning-200'>
               <p className='text-base sm:text-lg text-gray-700 leading-relaxed mb-6'>
                 We saw too many people trapped in that same exhausting repair
                 cycle — spending hundreds of dollars for something they could
@@ -198,7 +198,7 @@ const AboutView = () => {
               </CardContent>
             </Card>
 
-            <div className='bg-gradient-to-r from-primary-600 to-secondary-600 rounded-2xl p-8 sm:p-12 text-white'>
+            <div className='bg-linear-to-r from-primary-600 to-secondary-600 rounded-2xl p-8 sm:p-12 text-white'>
               <h3 className='text-2xl sm:text-3xl font-heading font-bold mb-6'>
                 That's when we decided to change the game
               </h3>
@@ -221,7 +221,7 @@ const AboutView = () => {
                 <ul className='space-y-2'>
                   {focusAreas.map((area, index) => (
                     <li key={index} className='flex items-center gap-3'>
-                      <CheckCircle size={20} className='flex-shrink-0' />
+                      <CheckCircle size={20} className='shrink-0' />
                       <span>{area}</span>
                     </li>
                   ))}
@@ -251,7 +251,7 @@ const AboutView = () => {
             {/* Our Mission */}
             <Card elevation='lg' className='h-full'>
               <CardHeader className='text-center'>
-                <div className='mb-6 p-4 bg-gradient-to-br from-primary-50 to-secondary-50 rounded-xl inline-block mx-auto'>
+                <div className='mb-6 p-4 bg-linear-to-br from-primary-50 to-secondary-50 rounded-xl inline-block mx-auto'>
                   <Target size={40} className='text-primary-600' />
                 </div>
                 <CardTitle className='text-2xl mb-3'>Our Mission</CardTitle>
@@ -276,7 +276,7 @@ const AboutView = () => {
             {/* Why We're Different */}
             <Card elevation='lg' className='h-full'>
               <CardHeader className='text-center'>
-                <div className='mb-6 p-4 bg-gradient-to-br from-success-50 to-primary-50 rounded-xl inline-block mx-auto'>
+                <div className='mb-6 p-4 bg-linear-to-br from-success-50 to-primary-50 rounded-xl inline-block mx-auto'>
                   <Award size={40} className='text-success-600' />
                 </div>
                 <CardTitle className='text-2xl mb-3'>
@@ -330,11 +330,11 @@ const AboutView = () => {
               {whatWeDo.map((item, index) => (
                 <div
                   key={index}
-                  className='flex items-start gap-3 p-4 bg-gradient-to-r from-primary-50 to-white rounded-lg border border-primary-100'
+                  className='flex items-start gap-3 p-4 bg-linear-to-r from-primary-50 to-white rounded-lg border border-primary-100'
                 >
                   <CheckCircle
                     size={24}
-                    className='text-primary-600 flex-shrink-0 mt-1'
+                    className='text-primary-600 shrink-0 mt-1'
                   />
                   <p className='text-gray-700'>{item}</p>
                 </div>
@@ -365,7 +365,7 @@ const AboutView = () => {
                 className='text-center border-2 border-transparent hover:border-primary-200 transition-all'
               >
                 <CardContent className='p-6'>
-                  <div className='w-16 h-16 bg-gradient-to-br from-primary-600 to-secondary-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4'>
+                  <div className='w-16 h-16 bg-linear-to-br from-primary-600 to-secondary-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4'>
                     {step.number}
                   </div>
                   <h3 className='text-lg font-heading font-semibold text-gray-900 mb-3'>
@@ -397,11 +397,11 @@ const AboutView = () => {
               {whoWeHelp.map((person, index) => (
                 <div
                   key={index}
-                  className='flex items-start gap-3 p-5 bg-gradient-to-br from-success-50 to-white rounded-xl border border-success-100'
+                  className='flex items-start gap-3 p-5 bg-linear-to-br from-success-50 to-white rounded-xl border border-success-100'
                 >
                   <Users
                     size={24}
-                    className='text-success-600 flex-shrink-0 mt-1'
+                    className='text-success-600 shrink-0 mt-1'
                   />
                   <p className='text-gray-700 font-medium'>{person}</p>
                 </div>
@@ -466,7 +466,7 @@ const AboutView = () => {
       </section>
 
       {/* CTA Section */}
-      <section className='py-16 sm:py-24 bg-gradient-to-br from-primary-600 via-primary-700 to-secondary-600 relative overflow-hidden'>
+      <section className='py-16 sm:py-24 bg-linear-to-br from-primary-600 via-primary-700 to-secondary-600 relative overflow-hidden'>
         <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-10"></div>
         <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
           <div className='max-w-4xl mx-auto text-center relative z-10'>
@@ -481,7 +481,7 @@ const AboutView = () => {
             <Link to='/register'>
               <Button
                 size='xl'
-                className='!bg-white !text-primary-600 hover:!bg-gray-50 shadow-2xl'
+                className='bg-white! text-primary-600! hover:bg-gray-50! shadow-2xl'
               >
                 Get Started Today
               </Button>
