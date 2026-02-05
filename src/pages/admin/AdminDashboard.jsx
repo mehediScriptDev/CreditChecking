@@ -147,22 +147,29 @@ const AdminDashboard = () => {
           {statsCards.map((stat) => {
             const Icon = stat.icon;
             return (
-              <Card
-                key={stat.title}
-                className='hover:shadow-lg transition-shadow'
-              >
+              <Card key={stat.title} elevation='md' hoverable>
                 <CardContent className='p-6'>
                   <div className='flex items-center justify-between mb-4'>
                     <div
-                      className={`w-12 h-12 rounded-lg bg-${stat.color}-100 flex items-center justify-center`}
+                      className={`w-14 h-14 rounded-xl flex items-center justify-center shadow-lg ${
+                        stat.color === 'primary'
+                          ? 'bg-gradient-to-br from-primary-500 to-primary-600'
+                          : stat.color === 'success'
+                            ? 'bg-gradient-to-br from-success-600 to-success-500'
+                            : stat.color === 'secondary'
+                              ? 'bg-gradient-to-br from-secondary-500 to-secondary-600'
+                              : 'bg-gradient-to-br from-info-500 to-info-600'
+                      }`}
                     >
-                      <Icon className={`text-${stat.color}-600`} size={24} />
+                      <Icon className='text-white' size={28} />
                     </div>
-                    <span className='text-sm font-semibold text-success-600'>
+                    <span className='text-sm font-bold px-3 py-1 bg-success-100 text-success-700 rounded-full'>
                       {stat.change}
                     </span>
                   </div>
-                  <p className='text-sm text-gray-600 mb-1'>{stat.title}</p>
+                  <p className='text-sm text-gray-600 mb-1 font-medium'>
+                    {stat.title}
+                  </p>
                   <p className='text-3xl font-bold text-gray-900'>
                     {stat.value}
                   </p>
@@ -173,46 +180,50 @@ const AdminDashboard = () => {
         </div>
 
         {/* System Health */}
-        <Card>
+        <Card elevation='lg'>
           <CardHeader>
-            <CardTitle>System Health</CardTitle>
-            <CardDescription>
+            <CardTitle className='text-2xl'>System Health</CardTitle>
+            <CardDescription className='text-base'>
               Real-time system performance metrics
             </CardDescription>
           </CardHeader>
           <CardContent>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
               <div className='flex items-center gap-4'>
-                <div className='w-12 h-12 rounded-full bg-success-100 flex items-center justify-center'>
-                  <CheckCircle2 className='text-success-600' size={24} />
+                <div className='w-14 h-14 rounded-xl bg-gradient-to-br from-success-500 to-success-600 flex items-center justify-center shadow-lg'>
+                  <CheckCircle2 className='text-white' size={28} />
                 </div>
                 <div>
-                  <p className='text-sm text-gray-600'>Uptime</p>
-                  <p className='text-2xl font-bold text-gray-900'>
+                  <p className='text-sm text-gray-600 font-medium'>Uptime</p>
+                  <p className='text-2xl font-bold bg-gradient-to-r from-success-600 to-success-500 bg-clip-text text-transparent'>
                     {dashboardData.systemHealth.uptime}
                   </p>
                 </div>
               </div>
 
               <div className='flex items-center gap-4'>
-                <div className='w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center'>
-                  <Clock className='text-primary-600' size={24} />
+                <div className='w-14 h-14 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center shadow-lg'>
+                  <Clock className='text-white' size={28} />
                 </div>
                 <div>
-                  <p className='text-sm text-gray-600'>Response Time</p>
-                  <p className='text-2xl font-bold text-gray-900'>
+                  <p className='text-sm text-gray-600 font-medium'>
+                    Response Time
+                  </p>
+                  <p className='text-2xl font-bold bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent'>
                     {dashboardData.systemHealth.responseTime}
                   </p>
                 </div>
               </div>
 
               <div className='flex items-center gap-4'>
-                <div className='w-12 h-12 rounded-full bg-warning-100 flex items-center justify-center'>
-                  <AlertCircle className='text-warning-600' size={24} />
+                <div className='w-14 h-14 rounded-xl bg-gradient-to-br from-warning-500 to-orange-500 flex items-center justify-center shadow-lg'>
+                  <AlertCircle className='text-white' size={28} />
                 </div>
                 <div>
-                  <p className='text-sm text-gray-600'>Error Rate</p>
-                  <p className='text-2xl font-bold text-gray-900'>
+                  <p className='text-sm text-gray-600 font-medium'>
+                    Error Rate
+                  </p>
+                  <p className='text-2xl font-bold bg-gradient-to-r from-warning-500 to-orange-500 bg-clip-text text-transparent'>
                     {dashboardData.systemHealth.errorRate}
                   </p>
                 </div>
@@ -222,10 +233,10 @@ const AdminDashboard = () => {
         </Card>
 
         {/* User Management */}
-        <Card>
+        <Card elevation='lg'>
           <CardHeader>
-            <CardTitle>User Management</CardTitle>
-            <CardDescription>
+            <CardTitle className='text-2xl'>User Management</CardTitle>
+            <CardDescription className='text-base'>
               Recent user registrations and activity
             </CardDescription>
           </CardHeader>

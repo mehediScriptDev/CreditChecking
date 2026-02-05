@@ -129,51 +129,55 @@ const Dashboard = () => {
 
         {/* Stats Overview */}
         <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
-          <Card>
+          <Card elevation='md' hoverable>
             <CardContent className='p-6'>
               <div className='flex items-center justify-between'>
                 <div>
-                  <p className='text-sm text-gray-600 mb-1'>
+                  <p className='text-sm text-gray-600 mb-1 font-medium'>
                     Total Validations
                   </p>
-                  <p className='text-3xl font-bold text-gray-900'>
+                  <p className='text-3xl font-bold bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent'>
                     {dashboardData.stats.totalValidations}
                   </p>
                 </div>
-                <div className='w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center'>
-                  <CheckCircle2 className='text-primary-600' size={24} />
+                <div className='w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center shadow-lg'>
+                  <CheckCircle2 className='text-white' size={28} />
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          <Card>
+          <Card elevation='md' hoverable>
             <CardContent className='p-6'>
               <div className='flex items-center justify-between'>
                 <div>
-                  <p className='text-sm text-gray-600 mb-1'>Pending Tasks</p>
-                  <p className='text-3xl font-bold text-gray-900'>
+                  <p className='text-sm text-gray-600 mb-1 font-medium'>
+                    Pending Tasks
+                  </p>
+                  <p className='text-3xl font-bold bg-gradient-to-r from-warning-500 to-orange-500 bg-clip-text text-transparent'>
                     {dashboardData.stats.pendingTasks}
                   </p>
                 </div>
-                <div className='w-12 h-12 bg-warning-100 rounded-full flex items-center justify-center'>
-                  <Clock className='text-warning-600' size={24} />
+                <div className='w-14 h-14 bg-gradient-to-br from-warning-500 to-orange-500 rounded-xl flex items-center justify-center shadow-lg'>
+                  <Clock className='text-white' size={28} />
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          <Card>
+          <Card elevation='md' hoverable elevation='md' hoverable>
             <CardContent className='p-6'>
               <div className='flex items-center justify-between'>
                 <div>
-                  <p className='text-sm text-gray-600 mb-1'>Completion Rate</p>
-                  <p className='text-3xl font-bold text-gray-900'>
+                  <p className='text-sm text-gray-600 mb-1 font-medium'>
+                    Completion Rate
+                  </p>
+                  <p className='text-3xl font-bold bg-gradient-to-r from-success-600 to-success-500 bg-clip-text text-transparent'>
                     {dashboardData.stats.completionRate}%
                   </p>
                 </div>
-                <div className='w-12 h-12 bg-success-100 rounded-full flex items-center justify-center'>
-                  <TrendingUp className='text-success-600' size={24} />
+                <div className='w-14 h-14 bg-gradient-to-br from-success-600 to-success-500 rounded-xl flex items-center justify-center shadow-lg'>
+                  <TrendingUp className='text-white' size={28} />
                 </div>
               </div>
             </CardContent>
@@ -181,10 +185,10 @@ const Dashboard = () => {
         </div>
 
         {/* Validation Journey */}
-        <Card>
+        <Card elevation='lg'>
           <CardHeader>
-            <CardTitle>Your Validation Journey</CardTitle>
-            <CardDescription>
+            <CardTitle className='text-2xl'>Your Validation Journey</CardTitle>
+            <CardDescription className='text-base'>
               Complete all three steps to get your credit profile type
             </CardDescription>
           </CardHeader>

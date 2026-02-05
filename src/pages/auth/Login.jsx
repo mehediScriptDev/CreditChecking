@@ -11,7 +11,6 @@ import Card, {
   CardContent,
   CardFooter,
 } from '../../Components/ui/Card';
-import { authService } from '../../services/apiService';
 import { setToken, setUser } from '../../utils/storage';
 import { getPageMetadata } from '../../utils/seo';
 
@@ -57,17 +56,62 @@ const Login = () => {
     if (!validateForm()) return;
 
     setLoading(true);
+
     try {
-      const response = await authService.login(formData);
-      setToken(response.token);
-      setUser(response.user);
-      toast.success('Login successful! Welcome back.');
+      // Mock authentication for development (no backend required)
+      const mockUsers = [
+        {
+          email: 'user@demo.com',
+          password: 'password123',
+          user: {
+            id: '1',
+            firstName: 'John',
+            lastName: 'Doe',
+            email: 'user@demo.com',
+            role: 'user',
+          },
+          token: 'mock-user-token-12345',
+        },
+        {
+          email: 'admin@demo.com',
+          password: 'password123',
+          user: {
+            id: '2',
+            firstName: 'Admin',
+            lastName: 'User',
+            email: 'admin@demo.com',
+            role: 'admin',
+          },
+          token: 'mock-admin-token-67890',
+        },
+      ];
+
+      // Simulate API delay
+      await new Promise((resolve) => setTimeout(resolve, 800));
+
+      // Check credentials
+      const authenticatedUser = mockUsers.find(
+        (u) => u.email === formData.email && u.password === formData.password,
+      );
+
+      if (!authenticatedUser) {
+        throw new Error('Invalid email or password');
+      }
+
+      // Store authentication data
+      setToken(authenticatedUser.token);
+      setUser(authenticatedUser.user);
+
+      toast.success(`Welcome back, ${authenticatedUser.user.firstName}!`);
+
+      // Small delay to ensure storage is complete before navigation
+      await new Promise((resolve) => setTimeout(resolve, 100));
 
       // Redirect based on role
-      if (response.user.role === 'admin') {
-        navigate('/admin/dashboard');
+      if (authenticatedUser.user.role === 'admin') {
+        navigate('/admin/dashboard', { replace: true });
       } else {
-        navigate('/dashboard');
+        navigate('/dashboard', { replace: true });
       }
     } catch (error) {
       toast.error(

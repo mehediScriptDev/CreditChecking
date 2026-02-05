@@ -11,7 +11,6 @@ import Card, {
   CardContent,
   CardFooter,
 } from '../../Components/ui/Card';
-import { authService } from '../../services/apiService';
 import { setToken, setUser } from '../../utils/storage';
 import { getPageMetadata } from '../../utils/seo';
 
@@ -81,16 +80,23 @@ const Register = () => {
 
     setLoading(true);
     try {
-      const response = await authService.register({
+      // Mock registration for development (no backend required)
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
+      const newUser = {
+        id: Date.now().toString(),
         firstName: formData.firstName,
         lastName: formData.lastName,
         email: formData.email,
-        password: formData.password,
-      });
+        role: 'user',
+      };
 
-      setToken(response.token);
-      setUser(response.user);
-      toast.success('Account created successfully! Welcome aboard.');
+      const mockToken = `mock-token-${Date.now()}`;
+
+      setToken(mockToken);
+      setUser(newUser);
+
+      toast.success(`Welcome aboard, ${newUser.firstName}!`);
       navigate('/dashboard');
     } catch (error) {
       toast.error(error.message || 'Registration failed. Please try again.');
