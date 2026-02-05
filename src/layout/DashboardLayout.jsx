@@ -226,14 +226,14 @@ const DashboardLayout = () => {
       {/* Mobile Sidebar Overlay */}
       {sidebarOpen && (
         <div
-          className='fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden'
+          className='fixed inset-0 bg-black/60 backdrop-blur-sm z-40 lg:hidden animate-[fadeIn_0.2s_ease-out]'
           onClick={() => setSidebarOpen(false)}
         />
       )}
 
       {/* Mobile Sidebar */}
       <aside
-        className={`fixed inset-y-0 left-0 w-64 bg-gray-900 text-white z-50 transform transition-transform duration-300 lg:hidden ${
+        className={`fixed inset-y-0 left-0 w-80 bg-gray-900 text-white z-50 shadow-2xl lg:hidden transition-all duration-300 ease-out ${
           sidebarOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
