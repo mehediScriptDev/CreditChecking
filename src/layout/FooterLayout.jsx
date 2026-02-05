@@ -5,12 +5,12 @@ const FooterLayout = () => {
 
   return (
     <footer className='bg-gray-900 text-white py-12'>
-      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+      <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='grid sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8'>
           {/* Brand */}
           <div className='md:col-span-2'>
             <div className='flex items-center gap-3 mb-4'>
-              <img src='/logo.png' alt='Logo' className='h-12' />
+              <img src='/footerLogo.png' alt='Logo' className='h-16 sm:h-20' />
             </div>
             <p className='text-gray-400 text-sm mb-4'>
               Educational credit validation platform helping you understand how
