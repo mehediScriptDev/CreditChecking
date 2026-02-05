@@ -23,9 +23,9 @@ const Modal = ({
   // Size variants
   const sizes = {
     sm: 'max-w-md',
-    md: 'max-w-lg',
-    lg: 'max-w-2xl',
-    xl: 'max-w-4xl',
+    md: 'w-3/4 max-w-3xl',
+    lg: 'w-3/4 max-w-4xl',
+    xl: 'w-3/4 max-w-6xl',
     full: 'max-w-full mx-4',
   };
 
@@ -39,14 +39,14 @@ const Modal = ({
     <Fragment>
       {/* Overlay */}
       <div
-        className='fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-50 transition-opacity duration-300 animate-fadeIn'
+        className='fixed inset-0 bg-black/50 backdrop-blur-sm z-50 animate-[fadeIn_0.2s_ease-out]'
         onClick={handleOverlayClick}
       >
         {/* Modal Container */}
         <div className='flex items-center justify-center min-h-screen p-4'>
           {/* Modal Content */}
           <div
-            className={`bg-white rounded-xl shadow-2xl w-full ${sizes[size]} transform transition-all duration-300 animate-scaleIn ${className}`}
+            className={`bg-white rounded-xl shadow-2xl w-full ${sizes[size]} animate-[slideUp_0.3s_ease-out] ${className}`}
             role='dialog'
             aria-modal='true'
             aria-labelledby='modal-title'

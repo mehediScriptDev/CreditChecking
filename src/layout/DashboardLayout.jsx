@@ -118,26 +118,16 @@ const DashboardLayout = () => {
       <aside className='hidden lg:flex lg:flex-col lg:w-64 bg-gray-900 text-white fixed left-0 top-0 bottom-0'>
         <div className='flex-1 flex flex-col overflow-hidden'>
           {/* Logo */}
-          <div className='p-6 border-b border-gray-800 flex-shrink-0'>
+          <div className='p-6 border-b border-gray-800 shrink-0'>
             <Link
               to={isAdmin ? '/admin/dashboard' : '/dashboard'}
-              className='flex items-center gap-3'
+              className='flex items-center justify-center'
             >
               {isAdmin ? (
-                <Shield className='text-primary-500' size={32} />
+                <Shield className='text-primary-500' size={320} />
               ) : (
-                <img src='/logo.png' alt='Logo' className='h-10' />
+                <img src='/footerLogo.png' alt='Logo' className='h-10' />
               )}
-              <div>
-                <span className='font-heading font-bold text-lg block'>
-                  {isAdmin ? 'Admin Panel' : 'No Dispute'}
-                </span>
-                {isAdmin && (
-                  <span className='text-xs text-gray-400'>
-                    No Dispute Credit
-                  </span>
-                )}
-              </div>
             </Link>
           </div>
 
@@ -154,7 +144,7 @@ const DashboardLayout = () => {
                 to={item.path}
                 className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
                   isActive(item.path)
-                    ? 'bg-gradient-to-r from-primary-600 to-primary-500 text-white shadow-lg'
+                    ? 'bg-linear-to-r from-primary-600 to-primary-500 text-white shadow-lg'
                     : 'text-gray-300 hover:bg-gray-800 hover:text-white'
                 }`}
               >
@@ -176,7 +166,7 @@ const DashboardLayout = () => {
                     to={item.path}
                     className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
                       isActive(item.path)
-                        ? 'bg-gradient-to-r from-primary-600 to-primary-500 text-white shadow-lg'
+                        ? 'bg-linear-to-r from-primary-600 to-primary-500 text-white shadow-lg'
                         : 'text-gray-300 hover:bg-gray-800 hover:text-white'
                     }`}
                   >
@@ -202,7 +192,7 @@ const DashboardLayout = () => {
           </nav>
 
           {/* Logout */}
-          <div className='p-4 border-t border-gray-800 flex-shrink-0'>
+          <div className='p-4 border-t border-gray-800 shrink-0'>
             <button
               onClick={handleLogout}
               className='flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white transition-all w-full'
@@ -221,19 +211,14 @@ const DashboardLayout = () => {
             {isAdmin ? (
               <Shield className='text-primary-600' size={28} />
             ) : (
-              <img src='/logo.png' alt='Logo' className='h-8' />
+              <img src='/footerLogo.png' alt='Logo' className='h-8' />
             )}
-            <div>
-              <span className='font-heading font-bold text-gray-900'>
-                {isAdmin ? 'Admin Panel' : 'No Dispute'}
-              </span>
-            </div>
           </div>
           <button
             onClick={() => setSidebarOpen(!sidebarOpen)}
             className='p-2 rounded-lg hover:bg-gray-100 transition-colors'
           >
-            {sidebarOpen ? <X size={24} /> : <Menu size={24} />}
+            <Menu size={24} />
           </button>
         </div>
       </div>
@@ -262,13 +247,8 @@ const DashboardLayout = () => {
               {isAdmin ? (
                 <Shield className='text-primary-500' size={28} />
               ) : (
-                <img src='/logo.png' alt='Logo' className='h-8' />
+                <img src='/footerLogo.png' alt='Logo' className='h-8' />
               )}
-              <div>
-                <span className='font-heading font-bold'>
-                  {isAdmin ? 'Admin Panel' : 'No Dispute'}
-                </span>
-              </div>
             </Link>
             <button
               onClick={() => setSidebarOpen(false)}
