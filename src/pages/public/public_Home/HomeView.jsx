@@ -314,7 +314,8 @@ const HomeView = () => {
               <Link to='/register'>
                 <Button
                   size='xl'
-                  className='bg-white text-primary-600! hover:bg-gray-50 shadow-2xl w-full sm:w-auto'
+                  variant='primary'
+                  className='bg-white! !text-primary-600 hover:!bg-gray-50 hover:!text-primary-700 shadow-2xl w-full sm:w-auto cursor-pointer'
                   rightIcon={
                     <ArrowRight size={24} className='text-primary-600' />
                   }
@@ -326,7 +327,7 @@ const HomeView = () => {
                 <Button
                   size='xl'
                   variant='outline'
-                  className='border-2 border-white text-white! hover:bg-white hover:text-primary-600! w-full sm:w-auto'
+                  className='!border-2 !border-white !text-white hover:!bg-white hover:!text-primary-600 w-full sm:w-auto cursor-pointer'
                 >
                   Learn More
                 </Button>
