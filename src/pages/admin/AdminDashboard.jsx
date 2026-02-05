@@ -143,7 +143,7 @@ const AdminDashboard = () => {
         </div>
 
         {/* Stats Grid */}
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
+        <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6'>
           {statsCards.map((stat) => {
             const Icon = stat.icon;
             return (
@@ -151,7 +151,7 @@ const AdminDashboard = () => {
                 <CardContent className='p-6'>
                   <div className='flex items-center justify-between mb-4'>
                     <div
-                      className={`w-14 h-14 rounded-xl flex items-center justify-center shadow-lg ${
+                      className={`w-12 h-12 rounded-xl flex items-center justify-center shadow-lg ${
                         stat.color === 'primary'
                           ? 'bg-gradient-to-br from-primary-500 to-primary-600'
                           : stat.color === 'success'
@@ -161,16 +161,16 @@ const AdminDashboard = () => {
                               : 'bg-gradient-to-br from-info-500 to-info-600'
                       }`}
                     >
-                      <Icon className='text-white' size={28} />
+                      <Icon className='text-white' size={24} />
                     </div>
-                    <span className='text-sm font-bold px-3 py-1 bg-success-100 text-success-700 rounded-full'>
+                    <span className='text-sm font-bold px-2 py-1 bg-success-100 text-success-700 rounded-full'>
                       {stat.change}
                     </span>
                   </div>
                   <p className='text-sm text-gray-600 mb-1 font-medium'>
                     {stat.title}
                   </p>
-                  <p className='text-3xl font-bold text-gray-900'>
+                  <p className='text-2xl font-bold text-gray-900'>
                     {stat.value}
                   </p>
                 </CardContent>
@@ -182,48 +182,48 @@ const AdminDashboard = () => {
         {/* System Health */}
         <Card elevation='lg'>
           <CardHeader>
-            <CardTitle className='text-2xl'>System Health</CardTitle>
-            <CardDescription className='text-base'>
+            <CardTitle className='text-xl'>System Health</CardTitle>
+            <CardDescription>
               Real-time system performance metrics
             </CardDescription>
           </CardHeader>
           <CardContent>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
               <div className='flex items-center gap-4'>
-                <div className='w-14 h-14 rounded-xl bg-gradient-to-br from-success-500 to-success-600 flex items-center justify-center shadow-lg'>
-                  <CheckCircle2 className='text-white' size={28} />
+                <div className='w-12 h-12 rounded-xl bg-gradient-to-br from-success-500 to-success-600 flex items-center justify-center shadow-lg'>
+                  <CheckCircle2 className='text-white' size={24} />
                 </div>
                 <div>
                   <p className='text-sm text-gray-600 font-medium'>Uptime</p>
-                  <p className='text-2xl font-bold bg-gradient-to-r from-success-600 to-success-500 bg-clip-text text-transparent'>
+                  <p className='text-xl font-bold bg-gradient-to-r from-success-600 to-success-500 bg-clip-text text-transparent'>
                     {dashboardData.systemHealth.uptime}
                   </p>
                 </div>
               </div>
 
               <div className='flex items-center gap-4'>
-                <div className='w-14 h-14 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center shadow-lg'>
-                  <Clock className='text-white' size={28} />
+                <div className='w-12 h-12 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center shadow-lg'>
+                  <Clock className='text-white' size={24} />
                 </div>
                 <div>
                   <p className='text-sm text-gray-600 font-medium'>
                     Response Time
                   </p>
-                  <p className='text-2xl font-bold bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent'>
+                  <p className='text-xl font-bold bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent'>
                     {dashboardData.systemHealth.responseTime}
                   </p>
                 </div>
               </div>
 
               <div className='flex items-center gap-4'>
-                <div className='w-14 h-14 rounded-xl bg-gradient-to-br from-warning-500 to-orange-500 flex items-center justify-center shadow-lg'>
-                  <AlertCircle className='text-white' size={28} />
+                <div className='w-12 h-12 rounded-xl bg-gradient-to-br from-warning-500 to-orange-500 flex items-center justify-center shadow-lg'>
+                  <AlertCircle className='text-white' size={24} />
                 </div>
                 <div>
                   <p className='text-sm text-gray-600 font-medium'>
                     Error Rate
                   </p>
-                  <p className='text-2xl font-bold bg-gradient-to-r from-warning-500 to-orange-500 bg-clip-text text-transparent'>
+                  <p className='text-xl font-bold bg-gradient-to-r from-warning-500 to-orange-500 bg-clip-text text-transparent'>
                     {dashboardData.systemHealth.errorRate}
                   </p>
                 </div>
