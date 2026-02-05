@@ -15,7 +15,7 @@ const NavbarLayout = () => {
           {/* Logo */}
           <Link
             to='/'
-            className='flex items-center hover:opacity-80 transition-all duration-300'
+            className='-ml-4 flex items-center hover:opacity-80 transition-all duration-300'
           >
             <img src='/logo.png' alt='Logo' className='h-16' />
           </Link>
@@ -64,7 +64,7 @@ const NavbarLayout = () => {
           </div>
 
           {/* Auth Buttons - Desktop */}
-          <div className='hidden lg:flex items-center gap-4'>
+          <div className=' hidden lg:flex items-center gap-4'>
             <Link to='/login'>
               <Button
                 variant='outline'
