@@ -300,42 +300,44 @@ const HomeView = () => {
         </section>
 
         {/* CTA Section */}
-        <section className='py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-primary-600 via-primary-700 to-secondary-600 relative overflow-hidden'>
+        <section className='py-16 sm:py-24 bg-linear-to-br from-primary-600 via-primary-700 to-secondary-600 relative overflow-hidden'>
           <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-10"></div>
-          <div className='max-w-4xl mx-auto text-center relative z-10'>
-            <h2 className='text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-white mb-4 sm:mb-6'>
-              Ready to Understand Your Credit?
-            </h2>
-            <p className='text-lg sm:text-xl md:text-2xl text-white opacity-90 mb-8 sm:mb-10'>
-              Join thousands learning how credit bureaus report data and what
-              impacts their scores
-            </p>
-            <div className='flex flex-col sm:flex-row gap-4 justify-center'>
-              <Link to='/register'>
-                <Button
-                  size='xl'
-                  variant='primary'
-                  className='bg-white! text-primary-600! hover:bg-gray-50! hover:text-primary-700! shadow-2xl w-full sm:w-auto cursor-pointer'
-                  rightIcon={
-                    <ArrowRight size={24} className='text-primary-600' />
-                  }
-                >
-                  Start Your Journey - It's Free
-                </Button>
-              </Link>
-              <Link to='/resources'>
-                <Button
-                  size='xl'
-                  variant='outline'
-                  className='border-2! border-white! text-white! hover:bg-white! hover:text-primary-600! w-full sm:w-auto cursor-pointer'
-                >
-                  Learn More
-                </Button>
-              </Link>
+          <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
+            <div className='max-w-4xl mx-auto text-center relative z-10'>
+              <h2 className='text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-white mb-4 sm:mb-6'>
+                Ready to Understand Your Credit?
+              </h2>
+              <p className='text-lg sm:text-xl md:text-2xl text-white opacity-90 mb-8 sm:mb-10'>
+                Join thousands learning how credit bureaus report data and what
+                impacts their scores
+              </p>
+              <div className='flex flex-col sm:flex-row gap-4 justify-center'>
+                <Link to='/register'>
+                  <Button
+                    size='xl'
+                    variant='primary'
+                    className='bg-white! text-primary-600! hover:bg-gray-50! hover:text-primary-700! shadow-2xl w-full sm:w-auto cursor-pointer'
+                    rightIcon={
+                      <ArrowRight size={24} className='text-primary-600' />
+                    }
+                  >
+                    Start Your Journey - It's Free
+                  </Button>
+                </Link>
+                <Link to='/resources'>
+                  <Button
+                    size='xl'
+                    variant='outline'
+                    className='border-2! border-white! text-white! hover:bg-white! hover:text-primary-600! w-full sm:w-auto cursor-pointer'
+                  >
+                    Learn More
+                  </Button>
+                </Link>
+              </div>
+              <p className='text-white text-xs sm:text-sm mt-6 sm:mt-8 opacity-75'>
+                No credit card required • Start immediately • Cancel anytime
+              </p>
             </div>
-            <p className='text-white text-xs sm:text-sm mt-6 sm:mt-8 opacity-75'>
-              No credit card required • Start immediately • Cancel anytime
-            </p>
           </div>
         </section>
 
