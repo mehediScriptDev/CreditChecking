@@ -8,22 +8,22 @@ const FooterLayout = () => {
   return (
     <footer className='bg-gray-900 text-white py-12'>
       <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
-        <div className='grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-8 lg:gap-12 mb-8'>
           {/* Brand */}
           <div>
-            <div className='flex items-center gap-3 mb-4'>
-              <img src='/footerLogo.png' alt='Logo' className='h-16 sm:h-20' />
+            <div className='mb-6'>
+              <img src='/footerLogo.png' alt='Logo' className='h-12 sm:h-14' />
             </div>
-            <p className='text-gray-400 text-sm mb-4'>
-              Educational credit validation platform helping you <br />
-              understand how credit bureaus report data.
+            <p className='text-gray-400 text-sm leading-relaxed max-w-xs'>
+              Educational credit validation platform helping you understand how
+              credit bureaus report data.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className='font-semibold text-lg mb-4'>Quick Links</h3>
-            <ul className='space-y-2 text-sm'>
+            <h3 className='font-semibold text-base mb-4'>Quick Links</h3>
+            <ul className='space-y-3 text-sm'>
               <li>
                 <Link
                   to='/'
@@ -42,6 +42,21 @@ const FooterLayout = () => {
               </li>
               <li>
                 <Link
+                  to='/about'
+                  className='text-gray-400 hover:text-white transition-colors'
+                >
+                  About
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Account */}
+          <div>
+            <h3 className='font-semibold text-base mb-4'>Account</h3>
+            <ul className='space-y-3 text-sm'>
+              <li>
+                <Link
                   to='/login'
                   className='text-gray-400 hover:text-white transition-colors'
                 >
@@ -56,71 +71,48 @@ const FooterLayout = () => {
                   Register
                 </Link>
               </li>
-            </ul>
-          </div>
-
-          {/* Legal */}
-          <div>
-            <h3 className='font-semibold text-lg mb-4'>Legal</h3>
-            <ul className='space-y-2 text-sm'>
               <li>
-                <a
-                  href='#'
+                <Link
+                  to='/contact'
                   className='text-gray-400 hover:text-white transition-colors'
                 >
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a
-                  href='#'
-                  className='text-gray-400 hover:text-white transition-colors'
-                >
-                  Terms of Service
-                </a>
-              </li>
-              <li>
-                <a
-                  href='#'
-                  className='text-gray-400 hover:text-white transition-colors'
-                >
-                  Disclaimer
-                </a>
+                  Contact
+                </Link>
               </li>
             </ul>
           </div>
 
           {/* Social Links */}
           <div>
-            <h3 className='font-semibold text-lg mb-4'>Follow Us</h3>
+            <h3 className='font-semibold text-base mb-4'>Follow Us</h3>
             <div className='flex gap-4'>
               <a
                 href='#'
                 className='text-gray-400 hover:text-white transition-colors'
                 aria-label='Facebook'
               >
-                <Facebook size={24} />
+                <Facebook size={20} />
               </a>
               <a
                 href='#'
                 className='text-gray-400 hover:text-white transition-colors'
                 aria-label='Instagram'
               >
-                <Instagram size={24} />
+                <Instagram size={20} />
               </a>
               <a
                 href='#'
                 className='text-gray-400 hover:text-white transition-colors'
                 aria-label='TikTok'
               >
-                <FaTiktok size={24} />
+                <FaTiktok size={20} />
               </a>
               <a
                 href='#'
                 className='text-gray-400 hover:text-white transition-colors'
                 aria-label='YouTube'
               >
-                <Youtube size={24} />
+                <Youtube size={20} />
               </a>
             </div>
           </div>
