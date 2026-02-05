@@ -211,7 +211,7 @@ const DashboardLayout = () => {
             {isAdmin ? (
               <Shield className='text-primary-600' size={28} />
             ) : (
-              <img src='/footerLogo.png' alt='Logo' className='h-8' />
+              <img src='/logo.png' alt='Logo' className='h-8' />
             )}
           </div>
           <button
