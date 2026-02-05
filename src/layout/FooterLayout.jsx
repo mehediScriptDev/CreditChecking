@@ -148,10 +148,6 @@ const FooterLayout = () => {
               </a>
             </div>
           </div>
-          <p className='text-center text-xs text-gray-500 mt-4'>
-            Educational tool only. We do not file disputes or provide
-            legal/financial advice.
-          </p>
         </div>
       </div>
     </footer>
