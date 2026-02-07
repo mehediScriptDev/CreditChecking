@@ -165,18 +165,18 @@ const QuizModal = ({ isOpen, onClose }) => {
 
   return (
     <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl animate-[slideUp_0.3s_ease-out]">
+      <div className="bg-linear-to-br from-slate-900 via-gray-900 to-slate-800 rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl animate-[slideUp_0.3s_ease-out] border border-white/10">
         {!showResults ? (
           <>
             {/* Quiz Header */}
-            <div className="bg-linear-to-r from-primary-600 to-secondary-600 p-6 rounded-t-3xl text-white">
+            <div className="bg-linear-to-r from-primary-600 to-emerald-600 p-6 rounded-t-3xl text-white">
               <div className="flex items-center justify-between mb-4">
                 <span className="text-sm opacity-80">
                   Free Credit Assessment
                 </span>
                 <button
                   onClick={resetQuiz}
-                  className="text-white/80 hover:text-white"
+                  className="text-white/80 hover:text-white text-xl"
                 >
                   ✕
                 </button>
@@ -200,7 +200,7 @@ const QuizModal = ({ isOpen, onClose }) => {
 
             {/* Question */}
             <div className="p-8">
-              <h4 className="text-xl font-semibold text-gray-900 mb-6">
+              <h4 className="text-xl font-semibold text-white mb-6">
                 {quizQuestions[currentQuestion].question}
               </h4>
               <div className="space-y-3">
@@ -208,15 +208,15 @@ const QuizModal = ({ isOpen, onClose }) => {
                   <button
                     key={idx}
                     onClick={() => handleAnswer(option.score)}
-                    className="w-full flex items-center gap-4 p-4 border-2 border-gray-200 rounded-xl hover:border-primary-400 hover:bg-primary-50 transition-all text-left group"
+                    className="w-full flex items-center gap-4 p-4 bg-white/5 border-2 border-white/10 rounded-xl hover:border-primary-400 hover:bg-white/10 transition-all text-left group"
                   >
-                    <div className="w-8 h-8 rounded-full border-2 border-gray-300 group-hover:border-primary-500 group-hover:bg-primary-500 flex items-center justify-center transition-all">
+                    <div className="w-8 h-8 rounded-full border-2 border-gray-500 group-hover:border-primary-500 group-hover:bg-primary-500 flex items-center justify-center transition-all">
                       <ChevronRight
                         size={16}
                         className="text-gray-400 group-hover:text-white"
                       />
                     </div>
-                    <span className="font-medium text-gray-700 group-hover:text-gray-900">
+                    <span className="font-medium text-gray-200 group-hover:text-white">
                       {option.label}
                     </span>
                   </button>
@@ -226,7 +226,7 @@ const QuizModal = ({ isOpen, onClose }) => {
               {currentQuestion > 0 && (
                 <button
                   onClick={() => setCurrentQuestion((prev) => prev - 1)}
-                  className="mt-6 flex items-center gap-2 text-gray-500 hover:text-gray-700"
+                  className="mt-6 flex items-center gap-2 text-gray-400 hover:text-white"
                 >
                   <ArrowLeft size={18} />
                   <span>Previous question</span>
@@ -240,7 +240,7 @@ const QuizModal = ({ isOpen, onClose }) => {
             <div className="p-8">
               <button
                 onClick={resetQuiz}
-                className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
+                className="absolute top-4 right-4 text-gray-400 hover:text-white text-xl"
               >
                 ✕
               </button>
@@ -252,17 +252,17 @@ const QuizModal = ({ isOpen, onClose }) => {
                 >
                   Your Credit Profile: {calculateProfile().type}
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                <h3 className="text-2xl font-bold text-white mb-2">
                   Quiz Complete!
                 </h3>
-                <p className="text-gray-600">{calculateProfile().message}</p>
+                <p className="text-gray-300">{calculateProfile().message}</p>
               </div>
 
               {/* 3 Free Boosting Tips */}
               <div className="mb-8">
                 <div className="flex items-center gap-2 mb-4">
-                  <Gift className="text-primary-600" size={24} />
-                  <h4 className="text-xl font-bold text-gray-900">
+                  <Gift className="text-primary-400" size={24} />
+                  <h4 className="text-xl font-bold text-white">
                     Your 3 Free Boosting Tips
                   </h4>
                 </div>
@@ -270,7 +270,7 @@ const QuizModal = ({ isOpen, onClose }) => {
                   {boostingTips.map((tip, idx) => (
                     <div
                       key={idx}
-                      className="p-4 border border-gray-200 rounded-xl hover:border-primary-200 hover:shadow-md transition-all"
+                      className="p-4 bg-white/5 border border-white/10 rounded-xl hover:border-primary-400/50 transition-all"
                     >
                       <div className="flex items-start gap-4">
                         <div
@@ -280,7 +280,7 @@ const QuizModal = ({ isOpen, onClose }) => {
                         </div>
                         <div>
                           <div className="flex items-center gap-2 mb-1">
-                            <h5 className="font-semibold text-gray-900">
+                            <h5 className="font-semibold text-white">
                               {tip.title}
                             </h5>
                             <span
@@ -289,7 +289,7 @@ const QuizModal = ({ isOpen, onClose }) => {
                               {tip.impact}
                             </span>
                           </div>
-                          <p className="text-sm text-gray-600">
+                          <p className="text-sm text-gray-300">
                             {tip.description}
                           </p>
                         </div>

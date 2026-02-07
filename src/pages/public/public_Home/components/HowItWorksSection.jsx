@@ -37,7 +37,7 @@ const steps = [
 
 const HowItWorksSection = () => {
   return (
-    <section className="py-24 bg-linear-to-br from-slate-900 via-gray-900 to-slate-800 relative overflow-hidden">
+    <section className="py-12 md:py-24 bg-linear-to-br from-slate-900 via-gray-900 to-slate-800 relative overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0">
         <div className="absolute top-1/3 left-1/3 w-125 h-125 bg-purple-500/20 rounded-full blur-[120px] animate-pulse" />
@@ -49,20 +49,20 @@ const HowItWorksSection = () => {
       {/* Grid Pattern Overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-size-[60px_60px]" />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-2 bg-secondary-500/20 text-secondary-400 rounded-full text-sm font-semibold mb-4">
+        <div className="text-center mb-8 md:mb-16">
+          <span className="inline-block px-3 py-1.5 md:px-4 md:py-2 bg-secondary-500/20 text-secondary-400 rounded-full text-xs md:text-sm font-semibold mb-3 md:mb-4">
             HOW IT WORKS
           </span>
-          <h2 className="text-4xl sm:text-5xl font-heading font-bold text-white mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-3 md:mb-4 px-2">
             Simple 4-Step Process
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg lg:text-xl text-gray-300 max-w-2xl mx-auto px-4">
             From upload to action plan in just a few clicks
           </p>
         </div>
 
         <div className="max-w-7xl mx-auto">
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
             {steps.map((step, index) => (
               <div key={index} className="relative group">
                 {/* Connector */}

@@ -11,8 +11,11 @@ const NavbarLayout = () => {
   const user = getUser();
   const isLoggedIn = !!user;
 
-  // Check if we're on the home page
-  const isHomePage = location.pathname === "/";
+  // Check if we're on a dark-themed public page (Home, About, Resources)
+  const isDarkThemePage =
+    location.pathname === "/" ||
+    location.pathname === "/about" ||
+    location.pathname === "/resources";
 
   // Handle scroll effect
   useEffect(() => {
@@ -27,35 +30,37 @@ const NavbarLayout = () => {
   const isActive = (path) => location.pathname === path;
 
   // Dynamic styles based on page and scroll position
-  const navBgClass = isHomePage
+  const navBgClass = isDarkThemePage
     ? scrolled
       ? "bg-transparent backdrop-blur-md shadow-lg "
       : "bg-[#10182b]"
     : "bg-[#10182b] shadow-xs ";
 
-  const textColorClass = isHomePage ? "text-white" : "text-gray-600";
+  const textColorClass = isDarkThemePage ? "text-white" : "text-gray-600";
 
-  const textActiveClass = isHomePage
+  const textActiveClass = isDarkThemePage
     ? "text-primary-400 font-semibold"
     : "text-primary font-semibold";
 
-  const textHoverClass = isHomePage
+  const textHoverClass = isDarkThemePage
     ? "hover:text-primary-400"
     : "hover:text-primary";
 
-  const mobileMenuBgClass = isHomePage
+  const mobileMenuBgClass = isDarkThemePage
     ? "bg-slate-900/95 backdrop-blur-md border-t border-white/10"
     : "bg-white border-t border-gray-100";
 
-  const mobileTextActiveClass = isHomePage
+  const mobileTextActiveClass = isDarkThemePage
     ? "text-primary-400 bg-white/10 font-semibold"
     : "text-primary bg-primary/10 font-semibold";
 
-  const mobileTextClass = isHomePage
+  const mobileTextClass = isDarkThemePage
     ? "text-gray-300 hover:bg-white/10 hover:text-white"
     : "text-gray-600 hover:bg-gray-50 hover:text-primary";
 
-  const hamburgerClass = isHomePage ? "text-white -mr-2" : "text-gray-700 -mr-2";
+  const hamburgerClass = isDarkThemePage
+    ? "text-white -mr-2"
+    : "text-gray-700 -mr-2";
 
   return (
     <header
@@ -149,7 +154,7 @@ const NavbarLayout = () => {
                   <Button
                     variant="outline"
                     size="md"
-                    className={`${isHomePage ? "text-white! border-white/30! hover:border-white! hover:bg-white/10!" : "text-gray-700 border-gray-300 hover:border-primary hover:text-primary hover:bg-primary/5"} transition-all duration-300 font-medium px-6`}
+                    className={`${isDarkThemePage ? "text-white! border-white/30! hover:border-white! hover:bg-white/10!" : "text-gray-700 border-gray-300 hover:border-primary hover:text-primary hover:bg-primary/5"} transition-all duration-300 font-medium px-6`}
                   >
                     Login
                   </Button>
@@ -170,7 +175,7 @@ const NavbarLayout = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`lg:hidden p-2 rounded-lg ${isHomePage ? "hover:bg-white/10" : "hover:bg-gray-100"} transition-colors`}
+            className={`lg:hidden p-2 rounded-lg ${isDarkThemePage ? "hover:bg-white/10" : "hover:bg-gray-100"} transition-colors`}
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? (
@@ -181,95 +186,101 @@ const NavbarLayout = () => {
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu - Dropdown Panel */}
         {isMobileMenuOpen && (
-          <div className={`lg:hidden py-4 ${mobileMenuBgClass} animate-fadeIn`}>
-            <div className="flex flex-col space-y-4">
-              <Link
-                to="/"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`text-base font-medium py-2 px-4 rounded-lg transition-all ${
-                  isActive("/") ? mobileTextActiveClass : mobileTextClass
-                }`}
-              >
-                Home
-              </Link>
-              {isLoggedIn && (
+          <div
+            className={`lg:hidden absolute top-full left-0 right-0 ${mobileMenuBgClass} shadow-2xl animate-fadeIn`}
+          >
+            <div className="container mx-auto px-4 py-6">
+              <div className="flex flex-col space-y-2">
                 <Link
-                  to={
-                    user?.role === "admin" ? "/admin/dashboard" : "/dashboard"
-                  }
+                  to="/"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`text-base font-medium py-2 px-4 rounded-lg transition-all ${
-                    isActive("/dashboard") || isActive("/admin/dashboard")
-                      ? mobileTextActiveClass
-                      : mobileTextClass
+                  className={`text-base font-medium py-3 px-4 rounded-lg transition-all ${
+                    isActive("/") ? mobileTextActiveClass : mobileTextClass
                   }`}
                 >
-                  Dashboard
+                  Home
                 </Link>
-              )}
-              <Link
-                to="/resources"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`text-base font-medium py-2 px-4 rounded-lg transition-all ${
-                  isActive("/resources")
-                    ? mobileTextActiveClass
-                    : mobileTextClass
-                }`}
-              >
-                Resources
-              </Link>
-              <Link
-                to="/about"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`text-base font-medium py-2 px-4 rounded-lg transition-all ${
-                  isActive("/about") ? mobileTextActiveClass : mobileTextClass
-                }`}
-              >
-                About
-              </Link>
-              <div className="pt-4 flex flex-col space-y-3">
-                {isLoggedIn ? (
+                {isLoggedIn && (
                   <Link
                     to={
                       user?.role === "admin" ? "/admin/dashboard" : "/dashboard"
                     }
                     onClick={() => setIsMobileMenuOpen(false)}
+                    className={`text-base font-medium py-3 px-4 rounded-lg transition-all ${
+                      isActive("/dashboard") || isActive("/admin/dashboard")
+                        ? mobileTextActiveClass
+                        : mobileTextClass
+                    }`}
                   >
-                    <Button
-                      variant="primary"
-                      className="w-full bg-primary-500! hover:bg-primary-600! shadow-sm transition-all font-medium"
-                    >
-                      Go to Dashboard
-                    </Button>
+                    Dashboard
                   </Link>
-                ) : (
-                  <>
+                )}
+                <Link
+                  to="/resources"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`text-base font-medium py-3 px-4 rounded-lg transition-all ${
+                    isActive("/resources")
+                      ? mobileTextActiveClass
+                      : mobileTextClass
+                  }`}
+                >
+                  Resources
+                </Link>
+                <Link
+                  to="/about"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`text-base font-medium py-3 px-4 rounded-lg transition-all ${
+                    isActive("/about") ? mobileTextActiveClass : mobileTextClass
+                  }`}
+                >
+                  About
+                </Link>
+                <div className="pt-4 flex flex-col space-y-3">
+                  {isLoggedIn ? (
                     <Link
-                      to="/login"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      <Button
-                        variant="outline"
-                        className={`w-full ${isHomePage ? "text-white! border-white/30! hover:border-white! hover:bg-white/10!" : "text-gray-700 border-gray-300 hover:border-primary hover:text-primary hover:bg-primary/5"} transition-all font-medium`}
-                      >
-                        Login
-                      </Button>
-                    </Link>
-                    <Link
-                      to="/register"
+                      to={
+                        user?.role === "admin"
+                          ? "/admin/dashboard"
+                          : "/dashboard"
+                      }
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       <Button
                         variant="primary"
                         className="w-full bg-primary-500! hover:bg-primary-600! shadow-sm transition-all font-medium"
                       >
-                        Get Started
+                        Go to Dashboard
                       </Button>
                     </Link>
-                  </>
-                )}
+                  ) : (
+                    <>
+                      <Link
+                        to="/login"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        <Button
+                          variant="outline"
+                          className={`w-full ${isHomePage ? "text-white! border-white/30! hover:border-white! hover:bg-white/10!" : "text-gray-700 border-gray-300 hover:border-primary hover:text-primary hover:bg-primary/5"} transition-all font-medium`}
+                        >
+                          Login
+                        </Button>
+                      </Link>
+                      <Link
+                        to="/register"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        <Button
+                          variant="primary"
+                          className="w-full bg-primary-500! hover:bg-primary-600! shadow-sm transition-all font-medium"
+                        >
+                          Get Started
+                        </Button>
+                      </Link>
+                    </>
+                  )}
+                </div>
               </div>
             </div>
           </div>
