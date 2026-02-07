@@ -153,12 +153,12 @@ const AdminDashboard = () => {
                     <div
                       className={`w-12 h-12 rounded-xl flex items-center justify-center shadow-lg ${
                         stat.color === 'primary'
-                          ? 'bg-gradient-to-br from-primary-500 to-primary-600'
+                          ? 'bg-linear-to-br from-primary-500 to-primary-600'
                           : stat.color === 'success'
-                            ? 'bg-gradient-to-br from-success-600 to-success-500'
+                            ? 'bg-linear-to-br from-success-600 to-success-500'
                             : stat.color === 'secondary'
-                              ? 'bg-gradient-to-br from-secondary-500 to-secondary-600'
-                              : 'bg-gradient-to-br from-info-500 to-info-600'
+                              ? 'bg-linear-to-br from-secondary-500 to-secondary-600'
+                              : 'bg-linear-to-br from-info-500 to-info-600'
                       }`}
                     >
                       <Icon className='text-white' size={24} />
@@ -190,40 +190,40 @@ const AdminDashboard = () => {
           <CardContent>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
               <div className='flex items-center gap-4'>
-                <div className='w-12 h-12 rounded-xl bg-gradient-to-br from-success-500 to-success-600 flex items-center justify-center shadow-lg'>
+                <div className='w-12 h-12 rounded-xl bg-linear-to-br from-success-500 to-success-600 flex items-center justify-center shadow-lg'>
                   <CheckCircle2 className='text-white' size={24} />
                 </div>
                 <div>
                   <p className='text-sm text-gray-600 font-medium'>Uptime</p>
-                  <p className='text-xl font-bold bg-gradient-to-r from-success-600 to-success-500 bg-clip-text text-transparent'>
+                  <p className='text-xl font-bold bg-linear-to-r from-success-600 to-success-500 bg-clip-text text-transparent'>
                     {dashboardData.systemHealth.uptime}
                   </p>
                 </div>
               </div>
 
               <div className='flex items-center gap-4'>
-                <div className='w-12 h-12 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center shadow-lg'>
+                <div className='w-12 h-12 rounded-xl bg-linear-to-br from-primary-500 to-primary-600 flex items-center justify-center shadow-lg'>
                   <Clock className='text-white' size={24} />
                 </div>
                 <div>
                   <p className='text-sm text-gray-600 font-medium'>
                     Response Time
                   </p>
-                  <p className='text-xl font-bold bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent'>
+                  <p className='text-xl font-bold bg-linear-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent'>
                     {dashboardData.systemHealth.responseTime}
                   </p>
                 </div>
               </div>
 
               <div className='flex items-center gap-4'>
-                <div className='w-12 h-12 rounded-xl bg-gradient-to-br from-warning-500 to-orange-500 flex items-center justify-center shadow-lg'>
+                <div className='w-12 h-12 rounded-xl bg-linear-to-br from-warning-500 to-orange-500 flex items-center justify-center shadow-lg'>
                   <AlertCircle className='text-white' size={24} />
                 </div>
                 <div>
                   <p className='text-sm text-gray-600 font-medium'>
                     Error Rate
                   </p>
-                  <p className='text-xl font-bold bg-gradient-to-r from-warning-500 to-orange-500 bg-clip-text text-transparent'>
+                  <p className='text-xl font-bold bg-linear-to-r from-warning-500 to-orange-500 bg-clip-text text-transparent'>
                     {dashboardData.systemHealth.errorRate}
                   </p>
                 </div>

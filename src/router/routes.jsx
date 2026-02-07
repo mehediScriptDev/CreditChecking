@@ -1,29 +1,33 @@
-import { createBrowserRouter, Navigate } from 'react-router';
-import RootLayout from '../layout/RootLayout';
-import PublicLayout from '../layout/PublicLayout';
-import DashboardLayout from '../layout/DashboardLayout';
-import ProtectedRoute from '../Components/ProtectedRoute';
+import { createBrowserRouter, Navigate } from "react-router";
+import RootLayout from "../layout/RootLayout";
+import PublicLayout from "../layout/PublicLayout";
+import DashboardLayout from "../layout/DashboardLayout";
+import ProtectedRoute from "../Components/ProtectedRoute";
 
 // Public Pages
-import HomeView from '../pages/public/public_Home/HomeView';
-import AboutView from '../pages/public/public_about/AboutView';
-import ContactView from '../pages/public/public_contact/ContactView';
-import NotFound from '../pages/error/NotFound';
+import HomeView from "../pages/public/public_Home/HomeView";
+import AboutView from "../pages/public/public_about/AboutView";
+import ContactView from "../pages/public/public_contact/ContactView";
+import NotFound from "../pages/error/NotFound";
 
 // Auth Pages
-import Login from '../pages/auth/Login';
-import Register from '../pages/auth/Register';
+import Login from "../pages/auth/Login";
+import Register from "../pages/auth/Register";
 
 // User Pages
-import Dashboard from '../pages/user/Dashboard';
+import Dashboard from "../pages/user/Dashboard";
+import CreditReportValidation from "../pages/user/CreditReportValidation";
+import CreditScoreValidation from "../pages/user/CreditScoreValidation";
+import CreditMonitoring from "../pages/user/CreditMonitoring";
+import Resources from "../pages/user/Resources";
 
 // Admin Pages
-import AdminDashboard from '../pages/admin/AdminDashboard';
+import AdminDashboard from "../pages/admin/AdminDashboard";
 
 export const router = createBrowserRouter([
   // Public Routes with Navbar
   {
-    path: '/',
+    path: "/",
     element: <RootLayout />,
     children: [
       {
@@ -34,22 +38,22 @@ export const router = createBrowserRouter([
             element: <HomeView />,
           },
           {
-            path: 'about',
+            path: "about",
             element: <AboutView />,
           },
           {
-            path: 'contact',
+            path: "contact",
             element: <ContactView />,
           },
         ],
       },
       // Auth Routes (No Layout)
       {
-        path: 'login',
+        path: "login",
         element: <Login />,
       },
       {
-        path: 'register',
+        path: "register",
         element: <Register />,
       },
     ],
@@ -57,7 +61,7 @@ export const router = createBrowserRouter([
 
   // User Dashboard Routes (No Navbar)
   {
-    path: 'dashboard',
+    path: "dashboard",
     element: (
       <ProtectedRoute>
         <DashboardLayout />
@@ -70,31 +74,31 @@ export const router = createBrowserRouter([
         element: <Dashboard />,
       },
       {
-        path: 'credit-report-validation',
-        element: <div>Credit Report Validation - Coming Soon</div>,
+        path: "credit-report-validation",
+        element: <CreditReportValidation />,
       },
       {
-        path: 'credit-score-validation',
-        element: <div>Credit Score Validation - Coming Soon</div>,
+        path: "credit-score-validation",
+        element: <CreditScoreValidation />,
       },
       {
-        path: 'results',
+        path: "results",
         element: <div>Results - Coming Soon</div>,
       },
       {
-        path: 'credit-monitoring',
-        element: <div>Credit Monitoring - Coming Soon</div>,
+        path: "credit-monitoring",
+        element: <CreditMonitoring />,
       },
       {
-        path: 'resources',
-        element: <div>Resources - Coming Soon</div>,
+        path: "resources",
+        element: <Resources />,
       },
     ],
   },
 
   // Admin Dashboard Routes (No Navbar)
   {
-    path: 'admin',
+    path: "admin",
     element: (
       <ProtectedRoute requireAdmin={true}>
         <DashboardLayout />
@@ -103,23 +107,23 @@ export const router = createBrowserRouter([
     errorElement: <NotFound />,
     children: [
       {
-        path: 'dashboard',
+        path: "dashboard",
         element: <AdminDashboard />,
       },
       {
-        path: 'users',
+        path: "users",
         element: <div>User Management - Coming Soon</div>,
       },
       {
-        path: 'validations',
+        path: "validations",
         element: <div>Validations - Coming Soon</div>,
       },
       {
-        path: 'analytics',
+        path: "analytics",
         element: <div>Analytics - Coming Soon</div>,
       },
       {
-        path: 'settings',
+        path: "settings",
         element: <div>Settings - Coming Soon</div>,
       },
     ],
@@ -127,7 +131,7 @@ export const router = createBrowserRouter([
 
   // 404 Catch-all
   {
-    path: '*',
+    path: "*",
     element: <NotFound />,
   },
 ]);

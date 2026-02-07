@@ -11,8 +11,8 @@ const FooterLayout = () => {
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-8 lg:gap-12 mb-8'>
           {/* Brand */}
           <div>
-            <div className='mb-6'>
-              <img src='/footerLogo.png' alt='Logo' className='h-12 sm:h-14' />
+            <div className='mb-6 -ml-6'>
+              <img src='/footerLogo.png' alt='Logo' className='h-12 sm:h-16' />
             </div>
             <p className='text-gray-400 text-sm leading-relaxed max-w-xs'>
               Educational credit validation platform helping you understand how
