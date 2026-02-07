@@ -6,7 +6,7 @@ const FooterLayout = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className='bg-gray-900 text-white py-12'>
+    <footer className='bg-gray-900 text-white pt-12 pb-8'>
       <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-8 lg:gap-12 mb-8'>
           {/* Brand */}
@@ -14,7 +14,7 @@ const FooterLayout = () => {
             <div className='mb-6 -ml-6'>
               <img src='/footerLogo.png' alt='Logo' className='h-12 sm:h-16' />
             </div>
-            <p className='text-gray-400 text-sm leading-relaxed max-w-xs'>
+            <p className='text-gray-400 text-base sm:text-lg  max-w-xs'>
               Educational credit validation platform helping you understand how
               credit bureaus report data.
             </p>
@@ -23,7 +23,7 @@ const FooterLayout = () => {
           {/* Quick Links */}
           <div>
             <h3 className='font-semibold text-base mb-4'>Quick Links</h3>
-            <ul className='space-y-3 text-sm'>
+            <ul className='space-y-3 text-sm sm:text-base'>
               <li>
                 <Link
                   to='/'
@@ -54,7 +54,7 @@ const FooterLayout = () => {
           {/* Account */}
           <div>
             <h3 className='font-semibold text-base mb-4'>Account</h3>
-            <ul className='space-y-3 text-sm'>
+            <ul className='space-y-3 text-sm sm:text-base'>
               <li>
                 <Link
                   to='/login'

@@ -55,7 +55,7 @@ const Button = forwardRef(
       outline:
         'border-2 border-primary-600 text-primary-600 hover:bg-primary-50 focus:ring-primary-500 active:bg-primary-100',
       ghost:
-        'text-gray-700 hover:bg-gray-100 focus:ring-gray-500 active:bg-gray-200',
+        'text-gray-700 cursor-pointer focus:ring-gray-500 active:bg-gray-200',
       danger:
         'bg-danger-600 text-white hover:bg-danger-700 focus:ring-danger-500 active:bg-danger-800',
       success:
