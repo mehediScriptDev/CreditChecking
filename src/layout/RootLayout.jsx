@@ -6,7 +6,7 @@ const RootLayout = () => {
   return (
     <div className='min-h-screen flex flex-col'>
       <NavbarLayout />
-      <main className='flex-1 pt-20'>
+      <main className='flex-1'>
         <SmoothScroll>
           <Outlet />
         </SmoothScroll>

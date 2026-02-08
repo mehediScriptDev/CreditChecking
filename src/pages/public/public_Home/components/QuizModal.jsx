@@ -174,36 +174,36 @@ const QuizModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-hidden">
+    <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-2 sm:p-4 overflow-hidden">
       <div
         data-lenis-prevent
-        className="bg-linear-to-br from-slate-900 via-gray-900 to-slate-800 rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto overscroll-contain shadow-2xl animate-[slideUp_0.3s_ease-out] border border-white/10 scrollbar-hide"
+        className="bg-linear-to-br from-slate-900 via-gray-900 to-slate-800 rounded-2xl sm:rounded-3xl max-w-2xl w-full max-h-[85vh] sm:max-h-[90vh] overflow-y-auto overscroll-contain shadow-2xl animate-[slideUp_0.3s_ease-out] border border-white/10 scrollbar-hide"
       >
         {!showResults ? (
           <>
             {/* Quiz Header */}
-            <div className="bg-linear-to-r from-primary-600 to-emerald-600 p-6 rounded-t-3xl text-white">
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-sm opacity-80">
+            <div className="bg-linear-to-r from-primary-600 to-emerald-600 p-4 sm:p-6 rounded-t-2xl sm:rounded-t-3xl text-white">
+              <div className="flex items-center justify-between mb-2 sm:mb-4">
+                <span className="text-xs sm:text-sm opacity-80">
                   Free Credit Assessment
                 </span>
                 <button
                   onClick={resetQuiz}
-                  className="text-white/80 hover:text-white text-xl"
+                  className="text-white/80 hover:text-white text-lg sm:text-xl p-1"
                 >
                   ✕
                 </button>
               </div>
-              <h3 className="text-2xl font-bold mb-2">
+              <h3 className="text-lg sm:text-2xl font-bold mb-1 sm:mb-2">
                 Discover Your Credit Profile
               </h3>
-              <p className="text-primary-100">
+              <p className="text-primary-100 text-sm sm:text-base">
                 Question {currentQuestion + 1} of {quizQuestions.length}
               </p>
               {/* Progress Bar */}
-              <div className="mt-4 bg-white/20 rounded-full h-2">
+              <div className="mt-3 sm:mt-4 bg-white/20 rounded-full h-1.5 sm:h-2">
                 <div
-                  className="bg-white rounded-full h-2 transition-all duration-300"
+                  className="bg-white rounded-full h-1.5 sm:h-2 transition-all duration-300"
                   style={{
                     width: `${((currentQuestion + 1) / quizQuestions.length) * 100}%`,
                   }}
@@ -212,24 +212,24 @@ const QuizModal = ({ isOpen, onClose }) => {
             </div>
 
             {/* Question */}
-            <div className="p-8">
-              <h4 className="text-xl font-semibold text-white mb-6">
+            <div className="p-4 sm:p-6 md:p-8">
+              <h4 className="text-base sm:text-lg md:text-xl font-semibold text-white mb-4 sm:mb-6">
                 {quizQuestions[currentQuestion].question}
               </h4>
-              <div className="space-y-3">
+              <div className="space-y-2 sm:space-y-3">
                 {quizQuestions[currentQuestion].options.map((option, idx) => (
                   <button
                     key={idx}
                     onClick={() => handleAnswer(option.score)}
-                    className="w-full flex items-center gap-4 p-4 bg-white/5 border-2 border-white/10 rounded-xl hover:border-primary-400 hover:bg-white/10 transition-all text-left group"
+                    className="w-full flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-white/5 border-2 border-white/10 rounded-lg sm:rounded-xl hover:border-primary-400 hover:bg-white/10 transition-all text-left group"
                   >
-                    <div className="w-8 h-8 rounded-full border-2 border-gray-500 group-hover:border-primary-500 group-hover:bg-primary-500 flex items-center justify-center transition-all">
+                    <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-gray-500 group-hover:border-primary-500 group-hover:bg-primary-500 flex items-center justify-center transition-all shrink-0">
                       <ChevronRight
-                        size={16}
-                        className="text-gray-400 group-hover:text-white"
+                        size={14}
+                        className="text-gray-400 group-hover:text-white sm:w-4 sm:h-4"
                       />
                     </div>
-                    <span className="font-medium text-gray-200 group-hover:text-white">
+                    <span className="font-medium text-sm sm:text-base text-gray-200 group-hover:text-white">
                       {option.label}
                     </span>
                   </button>
@@ -239,9 +239,9 @@ const QuizModal = ({ isOpen, onClose }) => {
               {currentQuestion > 0 && (
                 <button
                   onClick={() => setCurrentQuestion((prev) => prev - 1)}
-                  className="mt-6 flex items-center gap-2 text-gray-400 hover:text-white"
+                  className="mt-4 sm:mt-6 flex items-center gap-2 text-gray-400 hover:text-white text-sm sm:text-base"
                 >
-                  <ArrowLeft size={18} />
+                  <ArrowLeft size={16} className="sm:w-[18px] sm:h-[18px]" />
                   <span>Previous question</span>
                 </button>
               )}
@@ -250,59 +250,63 @@ const QuizModal = ({ isOpen, onClose }) => {
         ) : (
           <>
             {/* Results */}
-            <div className="p-8">
+            <div className="p-4 sm:p-6 md:p-8 relative">
               <button
                 onClick={resetQuiz}
-                className="absolute top-4 right-4 text-gray-400 hover:text-white text-xl"
+                className="absolute top-2 right-2 sm:top-4 sm:right-4 text-gray-400 hover:text-white text-lg sm:text-xl p-1"
               >
                 ✕
               </button>
 
               {/* Profile Result */}
-              <div className="text-center mb-8">
+              <div className="text-center mb-6 sm:mb-8 pt-4 sm:pt-0">
                 <div
-                  className={`inline-flex items-center px-4 py-2 ${calculateProfile().bg} ${calculateProfile().color} rounded-full font-semibold mb-4`}
+                  className={`inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 ${calculateProfile().bg} ${calculateProfile().color} rounded-full font-semibold mb-3 sm:mb-4 text-sm sm:text-base`}
                 >
                   Your Credit Profile: {calculateProfile().type}
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-2">
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-1 sm:mb-2">
                   Quiz Complete!
                 </h3>
-                <p className="text-gray-300">{calculateProfile().message}</p>
+                <p className="text-gray-300 text-sm sm:text-base">
+                  {calculateProfile().message}
+                </p>
               </div>
 
               {/* 3 Free Boosting Tips */}
-              <div className="mb-8">
-                <div className="flex items-center gap-2 mb-4">
-                  <Gift className="text-primary-400" size={24} />
-                  <h4 className="text-xl font-bold text-white">
+              <div className="mb-6 sm:mb-8">
+                <div className="flex items-center gap-2 mb-3 sm:mb-4">
+                  <Gift className="text-primary-400 w-5 h-5 sm:w-6 sm:h-6" />
+                  <h4 className="text-base sm:text-lg md:text-xl font-bold text-white">
                     Your 3 Free Boosting Tips
                   </h4>
                 </div>
-                <div className="space-y-4">
+                <div className="space-y-3 sm:space-y-4">
                   {boostingTips.map((tip, idx) => (
                     <div
                       key={idx}
-                      className="p-4 bg-white/5 border border-white/10 rounded-xl hover:border-primary-400/50 transition-all"
+                      className="p-3 sm:p-4 bg-white/5 border border-white/10 rounded-lg sm:rounded-xl hover:border-primary-400/50 transition-all"
                     >
-                      <div className="flex items-start gap-4">
+                      <div className="flex items-start gap-3 sm:gap-4">
                         <div
-                          className={`w-12 h-12 rounded-xl bg-linear-to-br ${tip.color} flex items-center justify-center text-white shrink-0`}
+                          className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-linear-to-br ${tip.color} flex items-center justify-center text-white shrink-0`}
                         >
-                          {tip.icon}
+                          <span className="scale-75 sm:scale-100">
+                            {tip.icon}
+                          </span>
                         </div>
-                        <div>
-                          <div className="flex items-center gap-2 mb-1">
-                            <h5 className="font-semibold text-white">
+                        <div className="min-w-0 flex-1">
+                          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-1">
+                            <h5 className="font-semibold text-white text-sm sm:text-base">
                               {tip.title}
                             </h5>
                             <span
-                              className={`text-xs px-2 py-0.5 rounded-full bg-linear-to-r ${tip.color} text-white`}
+                              className={`text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5 rounded-full bg-linear-to-r ${tip.color} text-white whitespace-nowrap`}
                             >
                               {tip.impact}
                             </span>
                           </div>
-                          <p className="text-sm text-gray-300">
+                          <p className="text-xs sm:text-sm text-gray-300">
                             {tip.description}
                           </p>
                         </div>
@@ -313,27 +317,32 @@ const QuizModal = ({ isOpen, onClose }) => {
               </div>
 
               {/* Upsell CTA */}
-              <div className="bg-linear-to-br from-gray-900 to-gray-800 rounded-2xl p-6 text-center">
-                <Lock className="mx-auto text-primary-400 mb-3" size={32} />
-                <h4 className="text-xl font-bold text-white mb-2">
+              <div className="bg-linear-to-br from-gray-900 to-gray-800 rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center">
+                <Lock className="mx-auto text-primary-400 mb-2 sm:mb-3 w-6 h-6 sm:w-8 sm:h-8" />
+                <h4 className="text-base sm:text-lg md:text-xl font-bold text-white mb-1 sm:mb-2">
                   Want the Full Analysis?
                 </h4>
-                <p className="text-gray-300 mb-4 text-sm">
+                <p className="text-gray-300 mb-3 sm:mb-4 text-xs sm:text-sm">
                   Get access to our complete credit validation system with 40
                   detailed questions, side-by-side bureau comparison, and a
                   personalized 90-day action plan.
                 </p>
                 <Link to="/register">
                   <Button
-                    size="lg"
+                    size="md"
                     variant="primary"
-                    rightIcon={<ArrowRight size={18} />}
-                    className="bg-linear-to-r! from-primary-500! to-emerald-500! shadow-xl w-full"
+                    rightIcon={
+                      <ArrowRight
+                        size={16}
+                        className="sm:w-[18px] sm:h-[18px]"
+                      />
+                    }
+                    className="bg-linear-to-r! from-primary-500! to-emerald-500! shadow-xl w-full text-sm sm:text-base"
                   >
                     Get Started - It's Free
                   </Button>
                 </Link>
-                <p className="text-gray-500 text-xs mt-3">
+                <p className="text-gray-500 text-[10px] sm:text-xs mt-2 sm:mt-3">
                   No credit card required
                 </p>
               </div>

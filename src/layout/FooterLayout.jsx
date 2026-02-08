@@ -12,7 +12,7 @@ const FooterLayout = () => {
           {/* Brand */}
           <div>
             <div className='mb-6 -ml-6'>
-              <img src='/footerLogo.png' alt='Logo' className='h-12 sm:h-16' />
+              <img src='/footerLogo.png' alt='Logo' className='h-16' />
             </div>
             <p className='text-gray-400 text-base sm:text-lg  max-w-xs'>
               Educational credit validation platform helping you understand how

@@ -32,9 +32,9 @@ const NavbarLayout = () => {
   // Dynamic styles based on page and scroll position
   const navBgClass = isDarkThemePage
     ? scrolled
-      ? "bg-transparent backdrop-blur-md shadow-lg "
-      : "bg-[#10182b]"
-    : "bg-[#10182b] shadow-xs ";
+      ? "bg-transparent backdrop-blur-md "
+      : "bg-[#10182b] "
+    : "bg-[#10182b] ";
 
   const textColorClass = isDarkThemePage ? "text-white" : "text-gray-600";
 
@@ -64,10 +64,10 @@ const NavbarLayout = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBgClass}`}
+      className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 ${navBgClass}`}
     >
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center lg:h-20">
           {/* Logo */}
           <Link
             to="/"
@@ -91,7 +91,7 @@ const NavbarLayout = () => {
                 <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary-400 rounded-full"></span>
               )}
             </Link>
-            {isLoggedIn && (
+            {/* {isLoggedIn && (
               <Link
                 to={user?.role === "admin" ? "/admin/dashboard" : "/dashboard"}
                 className={`text-base font-medium transition-all duration-300 relative py-2 ${
@@ -105,7 +105,7 @@ const NavbarLayout = () => {
                   <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary-400 rounded-full"></span>
                 )}
               </Link>
-            )}
+            )} */}
             <Link
               to="/resources"
               className={`text-base font-medium transition-all duration-300 relative py-2 ${
@@ -262,7 +262,7 @@ const NavbarLayout = () => {
                       >
                         <Button
                           variant="outline"
-                          className={`w-full ${isHomePage ? "text-white! border-white/30! hover:border-white! hover:bg-white/10!" : "text-gray-700 border-gray-300 hover:border-primary hover:text-primary hover:bg-primary/5"} transition-all font-medium`}
+                          className={`w-full ${isDarkThemePage ? "text-white! border-white/30! hover:border-white! hover:bg-white/10!" : "text-gray-700 border-gray-300 hover:border-primary hover:text-primary hover:bg-primary/5"} transition-all font-medium`}
                         >
                           Login
                         </Button>
