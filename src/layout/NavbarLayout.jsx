@@ -32,9 +32,9 @@ const NavbarLayout = () => {
   // Dynamic styles based on page and scroll position
   const navBgClass = isDarkThemePage
     ? scrolled
-      ? "bg-transparent backdrop-blur-md "
-      : "bg-[#10182b] "
-    : "bg-[#10182b] ";
+      ? "bg-[#10182b] backdrop-blur-md "
+      : "bg-[#10182b]"
+    : "bg-[#10182b]";
 
   const textColorClass = isDarkThemePage ? "text-white" : "text-gray-600";
 
